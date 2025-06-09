@@ -1,0 +1,61 @@
+<#if memory.name=="SRAM_ITC_cm33">
+	*(.data.$${memory.alias})
+	*(.data.$${memory.name})
+	*(.data.$${memory.alias}.*)
+	*(.data.$${memory.name}.*)
+	
+	KEEP(*(CodeQuickAccess))
+	
+	*cyclic_task.o*(*.text*)
+	*rpmsg_lite*(*.text*)
+	*rtos*(*.text*)
+	*lwip*(*.text*)
+	*libcr_eabihelpers.a:*(*.text*)
+	*freemaster*(*.text*)
+	
+	*cyclic_task.o*(*.rodata*)
+	*rpmsg_lite*(*.rodata*)
+	*rtos*(*.rodata*)
+	*lwip*(*.rodata*)
+	*libcr_eabihelpers.a:*(*.rodata*)
+	*freemaster*(*.rodata*)
+	
+</#if>
+
+<#if memory.name=="SRAM_OC1_1H">
+	*(.data.$${memory.alias})
+	*(.data.$${memory.name})
+	*(.data.$${memory.alias}.*)
+	*(.data.$${memory.name}.*)
+</#if>
+
+<#if memory.name=="NCACHE_REGION">
+	*(.data.$${memory.alias})
+	*(.data.$${memory.name})
+	*(.data.$${memory.alias}.*)
+	*(.data.$${memory.name}.*)
+	
+	*(NonCacheable.init)
+	
+	
+</#if>
+
+<#if memory.name=="M7_ITCM_ALIAS">
+
+        *(.data.$RAM6)
+        *(.data.$M7_ITCM_ALIAS)
+        *(.data.$RAM6.*)
+        *(.data.$M7_ITCM_ALIAS.*)
+
+</#if>
+
+<#if memory.name=="SHMEM_REGION">
+
+        *(.data.$RAM5)
+        *(.data.$SHMEM_REGION)
+        *(.data.$RAM5.*)
+        *(.data.$SHMEM_REGION.*)
+
+</#if>
+
+

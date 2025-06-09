@@ -1,0 +1,9 @@
+# ignore
+/Debug/*
+/Release/*
+.settings/
+
+# allow
+!/Debug/*.ld
+!/Debug/riop_M33LEADER_DEMO.axf
+!/Release/*.ld

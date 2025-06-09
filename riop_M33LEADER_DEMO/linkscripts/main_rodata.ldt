@@ -1,0 +1,12 @@
+ *(EXCLUDE_FILE( 	
+	
+	*cyclic_task.o*
+	*rpmsg_lite*
+	*rtos*
+	*lwip*
+	*libcr_eabihelpers.a:*
+	*freemaster*
+	
+) *.rodata*) 
+
+*(.constdata .constdata.*)

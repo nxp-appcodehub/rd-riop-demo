@@ -1,0 +1,2247 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta http-equiv="content-type" content="text/html; charset=windows-1250">
+        <meta http-equiv="X-UA-Compatible" content="IE=10">
+    <title id='Description'></title>
+    <link rel="stylesheet" href="styles/jqx.base.css" type="text/css" />
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="jqxcore.js"></script>
+    <script type="text/javascript" src="jqxdraw.js"></script>
+    <script type="text/javascript" src="jqxgauge.js"></script>
+	<script type="text/javascript" src="jqxslider.js"></script>
+    <script type="text/javascript" src="jqxbuttons.js"></script>
+    <script type="text/javascript" src="jqxscrollbar.js"></script>
+    <script type="text/javascript" src="jqxpanel.js"></script>
+	<script type="text/javascript" src="jqxnotification.js"></script>
+	<script type="text/javascript" src="jqxswitchbutton.js"></script>
+	<script type="text/javascript" src="jqxtooltip.js"></script>
+	<script type="text/javascript" src="jqxtabs.js"></script>
+	<script type="text/javascript" src="jqxSplitter.js"></script>
+	<script type="text/javascript" src="jqxlistbox.js"></script>
+	<script type="text/javascript" src="jqxComboBox.js"></script>
+	<script type="text/javascript" src="jqxradiobutton.js"></script>
+	<script type="text/javascript" src="jqxInput.js"></script>
+	
+	
+	
+
+	
+
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+			background-color: 	#F0F0F0;
+        }
+		
+		table, th, td {
+			border:1px solid black;
+		}
+		
+    </style>
+</head>
+
+<body>
+	
+	<object id="pcm" height="0" width="0" classid="clsid:48A185F1-FFDB-11D3-80E3-00C04F176153">
+    </object>
+
+	<font size="8" style="position:relative; top:0px; left:510px" ><b>Remote IO Platform control</b></font>
+	
+	
+
+	<div  style="position:absolute; top:80px; left:1000px;">	
+		<!-- MCU SIGGEN -->
+		
+		<font size="6" style="position:relative; top:2px; left:10px" >Signal generator control</font>
+		<div id="SiggenFreq"  style="position:relative; top:0px; left:0px; font-size: 20px" ></div>
+		<div id="jqxSliderSetSpeedM1" style="position:relative; top:0px; left:0px; z-index:8;" ></div>
+		<font size="4" style="position:relative; top:10px; left:0px" >Signal type</font>
+		<div id="jqxSwitchButtonSignalType" style="position:relative; bottom:20px; left:90px; z-index:8;" ></div>
+		<font size="4" style="position:relative; top:0px; left:0px" >Status</font>
+		<div id='jqxSwitchButtonEnableSiggen' style="position:relative; bottom:30px; left:90px;"></div>	
+		<button id='jqxAppUpdateButton' style="position:relative; left:20px; top:50px" type="button">SEND CONFIG</button>  <!-- RUN/STOP application button M1 -->
+		
+	</div>	
+
+<!-- AFE -->
+<div  style="position:absolute; top:80px; left:50px;">	
+	<font size="6" style="position:relative; top:0px; left:170px" >AFE control</font>
+	<div id='jqxTabs'>
+        <ul>
+            <li style="margin-left: 20px;">HVsig
+            </li>
+            <li>LVsig
+            </li>
+			<li>
+			Current
+            </li>
+			<li>
+			Temperature
+            </li>
+			<li>
+			GPIOs
+            </li>
+			<li>
+			Calibration
+			</li>
+			
+			
+        </ul>
+        
+		<!-- AFE HVSIG -->
+		
+		<div style="margin: 20px; overflow: hidden;">
+            <div id="splitter1">
+                <div>
+                    <font size="3" style="position:relative; top:5px; left:0px" >Channel 1</font>
+					<div id='jqxSwitchButtonHvsigCH1Enable' style="position:relative; bottom:19px; left:90px;"></div> 
+					
+					<font size="3" style="position:relative; top:7px; left:0px" >Channel 2</font>
+				    <div id='jqxSwitchButtonHvsigCH2Enable' style="position:relative; bottom:19px; left:90px;"></div> 
+					
+					<font size="3" style="position:relative; top:15px; left:0px" >Channel 3</font>		
+					<div id='jqxSwitchButtonHvsigCH3Enable' style="position:relative; bottom:14px; left:90px;"></div> 
+					 
+					
+				</div>
+               
+            </div>
+        </div>
+       
+	   <!-- AFE LVSIG-->
+	   <div style="overflow: hidden;">
+            <div style="margin: 10px;" id="splitter2">
+                
+				<div>
+                    <font size="3" style="position:relative; top:10px; left:0px" >Channel 1</font>
+					<div id='jqxSwitchButtonLvsigCH1Enable' style="position:relative; bottom:19px; left:90px;"></div> 
+					
+					<font size="3" style="position:relative; top:10px; left:0px" >Channel 2</font>
+				    <div id='jqxSwitchButtonLvsigCH2Enable' style="position:relative; bottom:14px; left:90px;"></div> 
+					
+					<font size="3" style="position:relative; top:12px; left:0px" >Channel 3</font>		
+					<div id='jqxSwitchButtonLvsigCH3Enable' style="position:relative; bottom:14px; left:90px;"></div> 
+					
+					<font size="3" style="position:relative; top:10px; left:0px" >Channel 4</font>		
+					<div id='jqxSwitchButtonLvsigCH4Enable' style="position:relative; bottom:14px; left:90px;"></div> 
+					
+					<font size="3" style="position:relative; top:10px; left:0px" >Channel 5</font>		
+					<div id='jqxSwitchButtonLvsigCH5Enable' style="position:relative; bottom:14px; left:90px;"></div> 		
+				</div>
+				
+			
+				<div>
+					<table style="width:100%">
+					  <tr>
+						<th></th>
+						<th>Average value [V]</th>
+						<th>Standard deviation [V]</th>
+					  </tr>
+					   <tr>
+						<td>GPIO1</td>
+						<td> <div id="LVsigGPIO1Avg" ></div> </td>
+						<td> <div id="LVsigGPIO1Stdev" ></div> </td>
+					  </tr>
+					  <tr>
+						<td>Ref_Coarse</td>
+						<td> <div id="LVsigRefAvg" ></div> </td>
+						<td> <div id="LVsigRefStdev" ></div> </td>
+					  </tr>
+					  <tr>
+						<td>VADD</td>
+						<td> <div id="LVsigVADDAvg" ></div> </td>
+						<td> <div id="LVsigVADDStdev" ></div> </td>
+					  </tr>
+					  <tr>
+						<td>VHDD</td>
+						<td> <div id="LVsigVHDDAvg" ></div> </td>
+						<td> <div id="LVsigVHDDStdev" ></div> </td>
+					  </tr>
+					  
+						<tr>
+						<td>VHSS</td>
+						<td> <div id="LVsigVHSSAvg" ></div> </td>
+						<td> <div id="LVsigVHSSStdev" ></div> </td>
+					  </tr>
+
+					</table>
+
+					<div id="LVsigsampleCnt"  style="position:relative; top:10px; left:0px; font-size: 12px" ></div>
+					<div id="jqxSliderLVsigSampleCnt" style="position:relative; top:18px; left:0px; z-index:8;" ></div>              
+					
+                </div>
+            </div>
+        </div>
+		
+		<!-- AFE CURRENT-->
+		<div style="overflow: hidden;">
+            <div style="margin: 10px;" id="splitter21">
+                
+				<div>
+                    <font size="3" style="position:relative; top:5px; left:0px" >Channel 1</font>
+					<div id='jqxSwitchButtonCurrentCH1Enable' style="position:relative; bottom:19px; left:90px;"></div> 
+				</div>
+				
+				<div>
+					<p><font size="3" style="position:relative; top:15px; left:0px" >Shunt resistor value [Ω]: </font></p>
+					<div id='jqxComboBox' style="position:relative; bottom:22px; left:210px;"> </div>			
+                </div>
+            </div>
+        </div>
+		
+		<!-- AFE TEMPERATURE-->
+		<div style="overflow: hidden;">
+            <div style="margin: 10px;" id="splitter21">
+              <div>			
+				<div>
+                    <font size="3" style="position:relative; top:5px; left:0px" >Channel 1</font>
+					<div id='jqxSwitchButtonTemperatureCH1Enable' style="position:relative; bottom:19px; left:90px;"></div> 
+				</div>
+			  
+				  <div id="TemperatureSampleCnt"  style="position:relative; top:0px; left:0px; font-size: 20px" ></div>
+				  <div id="jqxSliderTemperatureSampleCnt" style="position:relative; top:0px; left:0px; z-index:8;" ></div>
+				  <div id="TemperatureAvg"  style="position:relative; top:0px; left:0px; font-size: 15px" ></div>
+              </div>
+            </div>
+        </div>
+		
+		
+		<!-- AFE GPIO-->
+		<div style="margin: 20px; overflow: hidden;">
+            <div id="splitter1">
+                <div>
+					<font size="3" style="position:relative; top:5px; left:0px" >GPIO0</font>
+					<div id='jqxSwitchButtonGPIO0' style="position:relative; bottom:18px; left:60px;"></div> 
+					<div id='jqxSwitchButtonGPIO0Val' style="position:relative; bottom:50px; left:160px;"></div> 
+					
+					<font size="3" style="position:relative; bottom:25px; left:0px" >GPIO1</font>
+					<div id='jqxSwitchButtonGPIO1' style="position:relative; bottom:50px; left:60px;"></div> 
+					<div id='jqxSwitchButtonGPIO1Val' style="position:relative; bottom:82px; left:160px;"></div> 
+					
+					<font size="3" style="position:relative; bottom: 50px; left:0px" >GPIO2</font>
+					<div id='jqxSwitchButtonGPIO2' style="position:relative; bottom:76px; left:60px;"></div> 
+					<div id='jqxSwitchButtonGPIO2Val' style="position:relative; bottom:108px; left:160px;"></div> 
+					
+					<font size="3" style="position:relative; bottom:75px; left:0px" >GPIO3</font>
+					<div id='jqxSwitchButtonGPIO3' style="position:relative; bottom:102px; left:60px;"></div> 
+					<div id='jqxSwitchButtonGPIO3Val' style="position:relative; bottom:134px; left:160px;"></div> 
+					
+					<font size="3" style="position:relative; bottom:100px; left:0px" >GPIO4</font>
+					<div id='jqxSwitchButtonGPIO4' style="position:relative; bottom:128px; left:60px;"></div>  
+					<div id='jqxSwitchButtonGPIO4Val' style="position:relative; bottom:160px; left:160px;"></div> 
+					
+					<font size="3" style="position:relative; bottom:413px; left:250px" >GPIO5</font>
+					<div id='jqxSwitchButtonGPIO5' style="position:relative; bottom:437px; left:310px;"></div>  
+					<div id='jqxSwitchButtonGPIO5Val' style="position:relative; bottom:469px; left:410px;"></div> 
+					
+					<font size="3" style="position:relative; bottom:444px; left:250px" >GPIO6</font>
+					<div id='jqxSwitchButtonGPIO6' style="position:relative; bottom:469px; left:310px;"></div>  
+					<div id='jqxSwitchButtonGPIO6Val' style="position:relative; bottom:501px; left:410px;"></div> 
+					
+					<font size="3" style="position:relative; bottom:469px; left:250px" >GPIO7</font>
+					<div id='jqxSwitchButtonGPIO7' style="position:relative; bottom:495px; left:310px;"></div>  
+					<div id='jqxSwitchButtonGPIO7Val' style="position:relative; bottom:527px; left:410px;"></div> 
+					
+					<font size="3" style="position:relative; bottom:495px; left:250px" >GPIO8</font>
+					<div id='jqxSwitchButtonGPIO8' style="position:relative; bottom:521px; left:310px;"></div>  
+					<div id='jqxSwitchButtonGPIO8Val' style="position:relative; bottom:553px; left:410px;"></div> 
+					
+					<font size="3" style="position:relative; bottom:520px; left:250px" >GPIO9</font>
+					<div id='jqxSwitchButtonGPIO9' style="position:relative; bottom:547px; left:310px;"></div>  	  
+					<div id='jqxSwitchButtonGPIO9Val' style="position:relative; bottom:579px; left:410px;"></div> 
+	
+                </div>
+            </div>
+        </div>
+		
+		
+		<!-- AFE CALIBRATION-->
+		<div style="margin: 20px; overflow: hidden;">
+            <div id="splitter1">
+                <div>
+                    <font size="3" style="position:relative; top:5px; left:0px" >Voltage calibration</font>
+					<div id='jqxRadioButtonCalibrationVoltage' style="position:relative; bottom:13px; left:180px;"></div> 
+					
+					<font size="3" style="position:relative; top:10px; left:0px" >Resistance calibration</font>
+					<div id='jqxRadioButtonCalibrationResistance' style="position:relative; bottom:8px; left:180px;"></div>  	
+				</div>
+				
+				<div>
+					<button id='jqxCalStartButton' style="position:relative; top:30px; left:0px;" type="button">START CALIBRATION</button>  <!-- RUN/STOP application button M1 -->
+					
+					<div id="cal_text_1" style="position:relative; top:35px; left:0px;">Insert positive value measured on DMM</div>
+					<input id="jqxCalInput1" type="text" style="position:relative; top:40px; left:0px;" > </input>
+				
+					<div id="cal_text_2" style="position:relative; top:45px; left:0px;">Insert negative value measured on DMM</div>
+					<input id="jqxCalInput2" type="text" style="position:relative; top:50px; left:0px;" > </input>
+					
+					<div><button id='jqxCalUpdateButton' style="position:relative; top:60px; left:0px;" type="button">UPDATE CALIBRATION VALUE</button></div>     
+				</div>
+				
+				<div>
+				<font size="2" style="position:relative; top:80px; left:0px" >Original gain value</font>
+				<font size="2" id="orig_gain_val"  style="position:relative; top:80px; left:60px" >0</font>
+				</div>
+				
+				<div>
+				<font size="2" style="position:relative; top:90px; left:0px" >Original offset value</font>
+				<font size="2" id="orig_offset_val"  style="position:relative; top:90px; left:51px" >0</font>
+				</div>
+				
+				<div>
+				<font size="2" style="position:relative; top:100px; left:0px" >Calibrated gain value</font>
+				<font size="2" id="cal_gain_val"  style="position:relative; top:100px; left:45px" >0</font>
+				</div>
+				
+				<div>
+				<font size="2" style="position:relative; top:110px; left:0px" >Calibrated offset value</font>
+				<font size="2" id="cal_offset_val"  style="position:relative; top:110px; left:36px" >0</font>
+				</div>
+						
+				
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- MCU GPIOs -->	
+<div  style="position:absolute; top:110px; left:850px;">	
+<font size="6" style="position:relative; bottom:28px; right:180px; white-space: nowrap" >MCU GPIO control</font>
+    
+	<div id='emptyElementID123' style="position:relative; left:0px;"></div> 
+	<font size="3" style="position:relative; top:6px; right:56px; white-space: nowrap" >Input 0</font>
+	<div id='jqxSwitchButtonPlcIn0' style="position:relative; bottom:24px; left:0px;"></div> 
+ 
+	<font size="3" style="position:relative; top:6px; right:56px; white-space: nowrap" >Input 1</font>
+	<div id='jqxSwitchButtonPlcIn1' style="position:relative; bottom:24px; left:0px;"></div> 
+ 
+	<font size="3" style="position:relative; top:6px; right:56px; white-space: nowrap" >Input 2</font>
+	<div id='jqxSwitchButtonPlcIn2' style="position:relative; bottom:24px; left:0px;"></div> 
+	
+	<font size="3" style="position:relative; top:6px; right:56px; white-space: nowrap" >Input 3</font>
+    <div id='jqxSwitchButtonPlcIn3' style="position:relative; bottom:24px; left:0px;"></div> 
+	 
+	<font size="3" style="position:relative; top:6px; right:56px; white-space: nowrap" >Input 4</font>
+	<div id='jqxSwitchButtonPlcIn4' style="position:relative; bottom:24px; left:0px;"></div>  
+	
+	<font size="3" style="position:relative; top:6px; right:56px; white-space: nowrap" >Input 5</font>
+	<div id='jqxSwitchButtonPlcIn5' style="position:relative; bottom:24px; left:0px;"></div>  
+	
+	<font size="3" style="position:relative; top:6px; right:56px; white-space: nowrap" >Input 6</font>
+	<div id='jqxSwitchButtonPlcIn6' style="position:relative; bottom:24px; left:0px;"></div>  
+</div>
+
+<div  style="position:absolute; top:110px; left:700px;">	
+
+    
+	<font size="3" style="position:relative; top:27px; right:67px; white-space: nowrap" >Output 0</font>
+	<div id='jqxSwitchButtonPlcOut0' style="position:relative; top:0px; left:0px;"></div> 
+ 
+	<font size="3" style="position:relative; top:27px; right:67px; white-space: nowrap" >Output 1</font>
+	<div id='jqxSwitchButtonPlcOut1' style="position:relative; bottom:0px; left:0px;"></div> 
+ 
+	<font size="3" style="position:relative; top:27px; right:67px; white-space: nowrap" >Output 2</font>
+	<div id='jqxSwitchButtonPlcOut2' style="position:relative; top:0px; left:0px;"></div> 
+	
+	<font size="3" style="position:relative; top:27px; right:67px; white-space: nowrap" >Output 3</font>
+    <div id='jqxSwitchButtonPlcOut3' style="position:relative; top:0px; left:0px;"></div> 
+	 
+	<font size="3" style="position:relative; top:27px; right:67px; white-space: nowrap" >Output 4</font>
+	<div id='jqxSwitchButtonPlcOut4' style="position:relative; top:0px; left:0px;"></div>  
+	
+	<font size="3" style="position:relative; top:27px; right:67px; white-space: nowrap" >Output 5</font>
+	<div id='jqxSwitchButtonPlcOut5' style="position:relative; top:0px; left:0px;"></div>  
+	
+	<font size="3" style="position:relative; top:27px; right:67px; white-space: nowrap" >Output 6</font>
+	<div id='jqxSwitchButtonPlcOut6' style="position:relative; top:0px; left:0px;"></div> 
+
+	<font size="3" style="position:relative; top:27px; right:67px; white-space: nowrap" >Output 7</font>
+	<div id='jqxSwitchButtonPlcOut7' style="position:relative; top:0px; left:0px;"></div> 	
+</div>	
+
+	
+	<script language="VBScript">
+	Sub pcm_OnVariableChanged(varName , nSubscriptionId)
+		event_OnVariableChanged varName, nSubscriptionId
+	End Sub
+</script>
+	
+
+	<script type="text/javascript">
+
+	
+	/****************************************************************/
+	// Siggen vars
+	var Siggen_freq = 50;
+	var Siggen_signal_type = 0;	// 0 for sine, 1 for sawtooth
+	var Siggen_enabled = 0;		// 0 for disabled, 1 for enabled
+	var Siggen_dirty = 0;
+	
+	/****************************************************************/
+	// plc GPIOs	
+    var PlcGPIO_0_state = 0;	// Input start
+	var PlcGPIO_1_state = 0;
+	var PlcGPIO_2_state = 0;
+	var PlcGPIO_3_state = 0;
+	var PlcGPIO_4_state = 0;
+	var PlcGPIO_5_state = 0;
+	var PlcGPIO_6_state = 0;	// Input end
+	
+	var PlcGPIO_7_state = 0;  // Output start
+	var PlcGPIO_8_state = 0;
+	var PlcGPIO_9_state = 0;
+	var PlcGPIO_10_state = 0;
+	var PlcGPIO_11_state = 0;
+	var PlcGPIO_12_state = 0;
+	var PlcGPIO_13_state = 0;
+	var PlcGPIO_14_state = 0; // Output end
+	var PlcDigOutput_dirty = 0;
+
+	/****************************************************************/
+	// AFE GPIOs	
+   	
+	const AfeGPIO_dir = [0,0,1,1,1,1,1,1,1,1];
+	const AfeGPIO_out = [0,0,0,0,0,0,0,0,0,0];
+	
+	var AfeGPIO_dirty = 0;
+	
+	// AFE control
+	var Afe_control_tab = 0;
+	
+	/****************************************************************/
+	// AFE HVsig
+	var HVsig_Ch1_enable = 0;
+	var HVsig_Ch2_enable = 0;
+	var HVsig_Ch3_enable = 0;
+	var HVsig_dirty = 0;
+	
+	
+	/****************************************************************/
+	// LVsig
+	var LVsig_GPIO1_avg = 0;
+	var LVsig_Ref_avg = 0;
+	var LVsig_VADD_avg = 0;
+	var LVsig_VHDD_avg = 0;
+	var LVsig_VHSS_avg = 0;
+	
+	var LVsig_GPIO1_stDev = 0;
+	var LVsig_Ref_stDev = 0;
+	var LVsig_VADD_stDev = 0;
+	var LVsig_VHDD_stDev = 0;
+	var LVsig_VHSS_stDev = 0;
+	
+	var LVsig_sample_cnt = 100;
+	
+	var LVsig_dirty = 0;
+	
+	
+	/****************************************************************/
+	// AFE current measurement
+	var Current_shunt_val = 0;
+	var Current_dirty = 0;
+	
+	
+	/****************************************************************/
+	// AFE temperature measurement
+	var Temperature_sample_cnt = 100;
+	var Temperature_val_avg = 0;
+	var Temperature_dirty = 0;
+	
+	/****************************************************************/
+	// AFE calibration
+	var Calibration_dirty = 0;
+	var Calibration_method = 0;
+	var Calibration_phase = 0;
+	
+	
+	var vValue0, tValue0, retMsg; 
+	
+	
+	/*INIT STATUS VARS*/
+	
+	/*SIGGEN*/
+	var siggen_status_enabled = 0;
+	
+	
+	
+	/*VAR SUBSCRIBE*/
+	var soc_inputs_id = 0;
+	var afe_inputs_id = 0;
+	var afe_lvsig_mean = 0;
+	var afe_lvsig_stdev = 0;
+	var afe_temp_mean = 0;
+	var afe_cal_phase = 0;
+	
+	/*Timer*/
+	var SafeTimer = 0;
+	
+
+	/*FUNCTION ENCAPSULATION*/
+	function write_variable(name, value)
+    {
+        pcm.WriteVariable(name, value);      
+    }
+	
+	function write_double_variable(name, value)
+	{
+		pcm.WriteDoubleVariable(name, 8, value);
+	}
+	
+	function suscribe_variable(name)
+    {
+        return pcm.SubscribeVariable(name, 100);   
+    }
+	
+	function enable_button()
+	{
+		$('#jqxAppUpdateButton').jqxButton({disabled: false });
+	}
+	
+	function disable_button()
+	{
+		$('#jqxAppUpdateButton').jqxButton({disabled: true });
+	}
+	
+	
+	
+	/******************************************************************/
+	
+	// AFE HVSIG ELEMENTS
+    $("#jqxSwitchButtonHvsigCH1Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+	
+    $("#jqxSwitchButtonHvsigCH2Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+
+    $("#jqxSwitchButtonHvsigCH3Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });	
+	
+	
+	/******************************************************************/
+	// AFE LVSIG ELEMENTS
+	
+	$("#jqxSwitchButtonLvsigCH1Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+	
+    $("#jqxSwitchButtonLvsigCH2Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+
+    $("#jqxSwitchButtonLvsigCH3Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+	
+	$("#jqxSwitchButtonLvsigCH4Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+	
+    $("#jqxSwitchButtonLvsigCH5Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+	
+	// Lvsig Slider
+	$('#jqxSliderLVsigSampleCnt').jqxSlider({
+		orientation: 'horizontal',
+		template: "danger",
+		tooltip: true,
+		tooltipPosition: "far",
+		theme:'darkblue',
+		mode: 'fixed',
+		value: 50,
+		showButtons: true,
+		height: 40,
+		width: 400,
+		min: 100, max: 2000,
+		step: 10,
+		ticksFrequency: 100,
+		values: [100, 2000]
+
+	});
+	
+	
+	/******************************************************************/
+	//AFE CURRENT ELEMENTS
+	
+	$("#jqxSwitchButtonCurrentCH1Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+	
+	
+	/******************************************************************/
+	//TEMPERATURE ELEMENTS
+	
+	$("#jqxSwitchButtonTemperatureCH1Enable").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+	
+		// Temperature Slider
+	$('#jqxSliderTemperatureSampleCnt').jqxSlider({
+		orientation: 'horizontal',
+		template: "danger",
+		tooltip: true,
+		tooltipPosition: "far",
+		theme:'darkblue',
+		mode: 'fixed',
+		value: 50,
+		showButtons: true,
+		height: 40,
+		width: 400,
+		min: 10, max: 200,
+		step: 1,
+		ticksFrequency: 100,
+		values: [10, 200]
+
+	});
+	
+	
+	/******************************************************************/
+	//CALIBRATION ELEMENTS
+	$("#jqxRadioButtonCalibrationVoltage").jqxRadioButton(
+    {
+    	theme: 'classic',
+		groupName: "Calibration",
+    	width: '30',
+    	height: '20',
+    	checked: true,
+		disabled: false,
+    });
+	
+	$("#jqxRadioButtonCalibrationResistance").jqxRadioButton(
+    {
+    	theme: 'classic',
+		groupName: "Calibration",
+    	width: '30',
+    	height: '20',
+    	checked: false,
+		disabled: false,
+    });
+	
+	$("#jqxCalStartButton").jqxButton(
+    {
+        width: 150,
+        height: 25,
+        disabled: false,
+        template: "success"
+    });
+	
+	$("#jqxCalInput1").jqxInput(
+    {
+		theme: 'classic',
+        width: 150,
+        height: 25,
+        disabled: true,
+        minLength: 3,	
+    });
+	
+	$("#jqxCalInput2").jqxInput(
+    {
+		theme: 'classic',
+        width: 150,
+        height: 25,
+        disabled: true,
+        minLength: 3,	
+    });
+	
+	$("#jqxCalUpdateButton").jqxButton(
+    {
+        width: 150,
+        height: 50,
+        disabled: true,
+        template: "success"
+    });
+	
+	
+	
+	/******************************************************************/
+	// SIGGEN ELEMENTS
+    $("#jqxSwitchButtonEnableSiggen").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '150',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Enabled",
+        offLabel: "Disabled",
+    });
+	
+	$("#jqxSwitchButtonSignalType").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '180',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "Sawtooth",
+        offLabel: "Sine",
+    });
+	
+	// Speed M1 Slider
+	$('#jqxSliderSetSpeedM1').jqxSlider({
+		orientation: 'horizontal',
+		template: "danger",
+		tooltip: true,
+		tooltipPosition: "far",
+		theme:'darkblue',
+		mode: 'fixed',
+		value: 50,
+		showButtons: true,
+		height: 40,
+		width: 340,
+		min: 1, max: 100,
+		step: 1,
+		ticksFrequency: 10,
+		values: [1, 100]
+
+	});
+	
+
+	/******************************************************************/
+     //AFE GPIOS ELEMENTS
+	// GPIO 0
+    $("#jqxSwitchButtonGPIO0").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: true,
+		disabled: true,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+	 $("#jqxSwitchButtonGPIO0Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: true,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+
+  // GPIO 1
+    $("#jqxSwitchButtonGPIO1").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: true,
+		disabled: true,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+	$("#jqxSwitchButtonGPIO1Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: true,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	  // GPIO 2
+    $("#jqxSwitchButtonGPIO2").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: false,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+    $("#jqxSwitchButtonGPIO2Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	  // GPIO 3
+    $("#jqxSwitchButtonGPIO3").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: false,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+    $("#jqxSwitchButtonGPIO3Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	  // GPIO 4
+    $("#jqxSwitchButtonGPIO4").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: false,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+	$("#jqxSwitchButtonGPIO4Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	  // GPIO 5
+    $("#jqxSwitchButtonGPIO5").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: false,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+    $("#jqxSwitchButtonGPIO5Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	  // GPIO 6
+    $("#jqxSwitchButtonGPIO6").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: false,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+	$("#jqxSwitchButtonGPIO6Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	  // GPIO 7
+    $("#jqxSwitchButtonGPIO7").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: false,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+	$("#jqxSwitchButtonGPIO7Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	  // GPIO 8
+    $("#jqxSwitchButtonGPIO8").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: false,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+    $("#jqxSwitchButtonGPIO8Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	  // GPIO 9
+    $("#jqxSwitchButtonGPIO9").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '90',
+    	height: '30',
+    	checked: false,
+    	onLabel: "IN",
+        offLabel: "OUT",
+    });
+	
+	$("#jqxSwitchButtonGPIO9Val").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	/******************************************************************/
+	// MCU GPIO INPUTS
+	 $("#jqxSwitchButtonPlcIn0").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: true,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+   $("#jqxSwitchButtonPlcIn1").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: true,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+  
+  	$("#jqxSwitchButtonPlcIn2").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: true,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+  
+  	$("#jqxSwitchButtonPlcIn3").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: true,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+    $("#jqxSwitchButtonPlcIn4").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: true,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+  
+    $("#jqxSwitchButtonPlcIn5").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: true,
+    	onLabel: "1",
+        offLabel: "0",
+    });  
+  
+    $("#jqxSwitchButtonPlcIn6").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: true,
+    	onLabel: "1",
+        offLabel: "0",
+    });  
+
+
+	/******************************************************************/
+	// MCU GPIO OUTPUTS ELEMENTS
+	$("#jqxSwitchButtonPlcOut0").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+	$("#jqxSwitchButtonPlcOut1").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+  
+  	$("#jqxSwitchButtonPlcOut2").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+  
+  	$("#jqxSwitchButtonPlcOut3").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+	
+    $("#jqxSwitchButtonPlcOut4").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });
+  
+    $("#jqxSwitchButtonPlcOut5").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });  
+  
+    $("#jqxSwitchButtonPlcOut6").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });  	
+	
+	$("#jqxSwitchButtonPlcOut7").jqxSwitchButton(
+    {
+    	theme: 'classic',
+    	width: '50',
+    	height: '30',
+    	checked: false,
+		disabled: false,
+    	onLabel: "1",
+        offLabel: "0",
+    });  
+	
+	/******************************************************************/
+	// FORM UPDATE BUTTON ELEMENT
+	$("#jqxAppUpdateButton").jqxButton(
+    {
+        width: 300,
+        height: 50,
+        disabled: false,
+        template: "success"
+    });
+	/******************************************************************/
+	
+	
+	/******************************************************************/
+	/*FUNCTIONS FOR READ INPUT SIGNALS*/
+	
+	//VARIABLE SUBSCRIBE
+	function pcm_OnBoardDetected() {
+		soc_inputs_id = suscribe_variable('riop_status_buffer.mcu_digital_input_pins_status');
+		afe_inputs_id = suscribe_variable('riop_status_buffer.afe_status.afe_gpio_input_pins_status');
+		afe_lvsig_mean = suscribe_variable('riop_status_buffer.afe_status.lvsig_status.channel_mean');
+		afe_lvsig_stdev = suscribe_variable('riop_status_buffer.afe_status.lvsig_status.channel_stdev');	
+		afe_temp_mean = suscribe_variable('riop_status_buffer.afe_status.temperature_status.channel_value');
+		afe_cal_phase = suscribe_variable('riop_status_buffer.afe_status.calibration_status.calibration_phase');
+			
+		
+		
+		//SIGGEN
+		pcm.ReadVariable("riop_status_buffer.siggen_status.enabled", vValue0, tValue0, retMsg)
+		Siggen_enabled = pcm.LastVariable_vValue;
+		
+		if(Siggen_enabled == 0)
+		{
+			$('#jqxSwitchButtonEnableSiggen').jqxSwitchButton({checked: false });
+		}
+		else
+		{
+			$('#jqxSwitchButtonEnableSiggen').jqxSwitchButton({checked: true });
+		}
+		
+		pcm.ReadVariable("riop_status_buffer.siggen_status.type", vValue0, tValue0, retMsg);
+		siggen_signal_type = pcm.LastVariable_vValue; 
+		if(siggen_signal_type == 0)
+		{
+			$("#jqxSwitchButtonSignalType").jqxSwitchButton({checked: false });
+		}
+		else
+		{
+			$("#jqxSwitchButtonSignalType").jqxSwitchButton({checked: true });
+		}
+		
+		pcm.ReadVariable("riop_status_buffer.siggen_status.frequency", vValue0, tValue0, retMsg);
+		siggen_freq = pcm.LastVariable_vValue; 
+		$('#jqxSliderSetSpeedM1').jqxSlider('setValue', siggen_freq);
+		
+		document.getElementById("SiggenFreq").innerHTML = "Frequency: " + siggen_freq + " Hz";
+		
+		
+		//MCU DIG OUTPUT
+		pcm.ReadVariable("riop_status_buffer.mcu_digital_output_pins_status", vValue0, tValue0, retMsg)
+		let status_outputs = pcm.LastVariable_vValue;  
+		
+		for(let i = 0; i < 8; i++)
+		{
+			let status = (status_outputs & (0x1<<i));
+			
+			let text = ('#jqxSwitchButtonPlcOut'+i);
+		
+			if((status != 0))
+			{
+				$('#jqxSwitchButtonPlcOut'+i).jqxSwitchButton({checked: true });
+			}
+			else
+			{
+				$('#jqxSwitchButtonPlcOut'+i).jqxSwitchButton({checked: false });
+			}
+		}
+		
+		
+		// AFE GPIOs
+		pcm.ReadVariable("riop_status_buffer.afe_status.afe_gpio_pins_direction_status", vValue0, tValue0, retMsg)
+		let gpio_dir = pcm.LastVariable_vValue;
+		
+		pcm.ReadVariable("riop_status_buffer.afe_status.afe_gpio_output_pins_status", vValue0, tValue0, retMsg)
+		let gpio_out = pcm.LastVariable_vValue;
+		
+		for(let i = 2; i < 10; i++)
+		{	
+			let status_dir = (gpio_dir & (0x1<<i));
+			
+			if(status_dir != 0)		
+			{
+				$('#jqxSwitchButtonGPIO'+ i).jqxSwitchButton({checked: false });
+				AfeGPIO_dir[i] = 1;
+				
+			}
+			else
+			{
+				$('#jqxSwitchButtonGPIO'+ i).jqxSwitchButton({checked: true });
+				AfeGPIO_dir[i] = 0;
+			}
+			
+
+			let status_out = (gpio_out & (0x1<<i));
+			
+			if(status_out != 0) 
+			{
+				$('#jqxSwitchButtonGPIO'+ i + "Val").jqxSwitchButton({checked: true });
+				AfeGPIO_out[i] = 1;
+			}
+			else
+			{
+				$('#jqxSwitchButtonGPIO'+ i + "Val").jqxSwitchButton({checked: false });
+				AfeGPIO_out[i] = 0;
+			}
+		}
+	}
+	
+	
+	//READ FUNCTION
+	function ReadSoCInputs()
+	{
+		pcm.ReadVariable("riop_status_buffer.mcu_digital_input_pins_status", vValue0, tValue0, retMsg)
+		var status_inputs = pcm.LastVariable_vValue;  
+		
+		for(let i = 0; i < 7; i++)
+		{
+			var status = (status_inputs & (0x1<<i))
+			
+			let text = ('#jqxSwitchButtonPlcIn'+i);
+		
+			if((status != 0))
+			{
+				$('#jqxSwitchButtonPlcIn'+i).jqxSwitchButton({checked: true });
+			}
+			else
+			{
+				$('#jqxSwitchButtonPlcIn'+i).jqxSwitchButton({checked: false });
+			}
+		}
+	}
+
+	function ReadAfeInputs()
+	{
+		pcm.ReadVariable("riop_command_buffer.afe_command.afe_gpio_command.gpio_pin_direction", vValue0, tValue0, retMsg)
+		let gpio_dir = pcm.LastVariable_vValue;
+		
+		pcm.ReadVariable("riop_status_buffer.afe_status.afe_gpio_input_pins_status", vValue0, tValue0, retMsg)
+		let input_values = pcm.LastVariable_vValue;
+		
+		for(let i = 0; i < 10; i++)
+		{	
+			let text = ('#jqxSwitchButtonGPIO'+i);
+		
+			if( (gpio_dir & (0x1<<i) ) == 0)		// Check if it is input
+			{					
+				let status = (input_values & (0x1<<i));			
+
+				if(status != 0) 
+				{
+					$('#jqxSwitchButtonGPIO'+ i + "Val").jqxSwitchButton({checked: true });
+				}
+				else
+				{
+					$('#jqxSwitchButtonGPIO'+ i + "Val").jqxSwitchButton({checked: false });
+				}
+			}
+		}		
+	}
+	
+	function ReadAfeLvsigMean()
+	{
+		const arr = new Array(5);
+		
+		pcm.ReadFloatArray("riop_status_buffer.afe_status.lvsig_status.channel_mean", 5, arr, retMsg);
+		let result = pcm.LastResult;
+		const mean_result = pcm.LastMemory_data.slice();
+		
+		document.getElementById("LVsigGPIO1Avg").innerHTML = mean_result[0].toFixed(5);
+		document.getElementById("LVsigRefAvg").innerHTML = mean_result[1].toFixed(5);	
+		document.getElementById("LVsigVADDAvg").innerHTML = mean_result[2].toFixed(5);
+		document.getElementById("LVsigVHDDAvg").innerHTML = mean_result[3].toFixed(5);
+		document.getElementById("LVsigVHSSAvg").innerHTML = mean_result[4].toFixed(5);
+		
+		$('#jqxAppUpdateButton').jqxButton({disabled: false });
+	}
+	
+	function ReadAfeLvsigStdev()
+	{
+		const arr = new Array(5);
+		
+		pcm.ReadFloatArray("riop_status_buffer.afe_status.lvsig_status.channel_stdev", 5, arr, retMsg);
+		let result = pcm.LastResult;
+		const stdev_result = pcm.LastMemory_data.slice();
+		
+		document.getElementById("LVsigGPIO1Stdev").innerHTML = stdev_result[0].toFixed(5);
+		document.getElementById("LVsigRefStdev").innerHTML = stdev_result[1].toFixed(5);	
+		document.getElementById("LVsigVADDStdev").innerHTML = stdev_result[2].toFixed(5);
+		document.getElementById("LVsigVHDDStdev").innerHTML = stdev_result[3].toFixed(5);
+		document.getElementById("LVsigVHSSStdev").innerHTML = stdev_result[4].toFixed(5);
+
+		$('#jqxAppUpdateButton').jqxButton({disabled: false });		
+	}
+	
+	function ReadAfeTempMean()
+	{
+		pcm.ReadFloatVariable("riop_status_buffer.afe_status.temperature_status.channel_value", vValue0, retMsg);
+		let temperature_mean = pcm.LastVariable_vValue;
+		
+		temperature_mean = temperature_mean.toFixed(5);
+		
+		document.getElementById("TemperatureAvg").innerHTML = "Average temperature [°C]: " + temperature_mean;	
+		
+		$('#jqxAppUpdateButton').jqxButton({disabled: false });
+		
+		clearTimeout(SafeTimer); 
+		
+	}
+	
+	function ReadAfeCalPhase()
+	{
+		pcm.ReadVariable("riop_status_buffer.afe_status.calibration_status.calibration_phase", vValue0, tValue0, retMsg)
+		Calibration_phase = pcm.LastVariable_vValue;
+		
+		if(Calibration_phase == 1)
+		{
+			$('#jqxCalInput1').jqxInput({disabled: false });
+			$('#jqxCalUpdateButton').jqxButton({disabled: false });
+		}
+		else if(Calibration_phase == 2)
+		{
+			$('#jqxCalInput2').jqxInput({disabled: false });
+		}
+		else
+		{
+			const calib_values = new Array(4);
+			
+			pcm.ReadVariable("riop_status_buffer.afe_status.calibration_status.original_gain", vValue0, tValue0, retMsg)
+			calib_values[0] = pcm.LastVariable_vValue;
+			
+			pcm.ReadVariable("riop_status_buffer.afe_status.calibration_status.original_offset", vValue0, tValue0, retMsg)
+			calib_values[1] = pcm.LastVariable_vValue;
+			
+			pcm.ReadVariable("riop_status_buffer.afe_status.calibration_status.calculated_gain", vValue0, tValue0, retMsg)
+			calib_values[2] = pcm.LastVariable_vValue;
+			
+			pcm.ReadVariable("riop_status_buffer.afe_status.calibration_status.calculated_offset", vValue0, tValue0, retMsg)
+			calib_values[3] = pcm.LastVariable_vValue;
+			
+			
+			document.getElementById("orig_gain_val").innerHTML = calib_values[0];
+			document.getElementById("orig_offset_val").innerHTML = calib_values[1];
+			document.getElementById("cal_gain_val").innerHTML = calib_values[2];		
+			document.getElementById("cal_offset_val").innerHTML = calib_values[3];
+			
+			
+			$('#jqxCalInput1').jqxInput({disabled: true });
+			$('#jqxCalInput2').jqxInput({disabled: true });
+			
+			$("#jqxCalInput1").val('');
+			$("#jqxCalInput2").val('');
+			
+			$('#jqxCalUpdateButton').jqxButton({disabled: true });
+			$('#jqxCalStartButton').jqxButton({disabled: false });
+			
+			$('#jqxAppUpdateButton').jqxButton({disabled: false });
+			$('#jqxRadioButtonCalibrationVoltage').jqxRadioButton({disabled: false });
+			$('#jqxRadioButtonCalibrationResistance').jqxRadioButton({disabled: false });	
+			
+			$('#jqxTabs').jqxTabs('enable');
+			$('#jqxTabs').jqxTabs('select', 5); 
+			
+		}
+		
+	}
+	
+	function pcm_OnVariableChanged(VariableName, IDsubscribedVariable)  
+	{
+	    switch(IDsubscribedVariable)
+		{
+            case soc_inputs_id:
+	            ReadSoCInputs();
+	            break;
+            
+			case afe_inputs_id:
+	            ReadAfeInputs();
+	            break;
+				
+			case afe_lvsig_mean:
+				ReadAfeLvsigMean();
+				break;
+			
+			case afe_lvsig_stdev:
+				ReadAfeLvsigStdev();
+				break;
+				
+			case afe_temp_mean:
+				ReadAfeTempMean();
+				break;
+				
+			case afe_cal_phase:
+				ReadAfeCalPhase();
+				break;
+			
+	        default:
+	    }
+	}	
+	
+	/******************************************************************/
+	
+	/******************************************************************/
+	
+	$(document).ready(function ()
+	{
+
+		// LVsig table fill by 0
+		document.getElementById("LVsigGPIO1Avg").innerHTML = LVsig_GPIO1_avg;
+		document.getElementById("LVsigRefAvg").innerHTML = LVsig_Ref_avg;	
+		document.getElementById("LVsigVADDAvg").innerHTML = LVsig_VADD_avg;
+		document.getElementById("LVsigVHDDAvg").innerHTML = LVsig_VHDD_avg;
+		document.getElementById("LVsigVHSSAvg").innerHTML = LVsig_VHSS_avg;
+
+		document.getElementById("LVsigGPIO1Stdev").innerHTML = LVsig_GPIO1_stDev;
+		document.getElementById("LVsigRefStdev").innerHTML = LVsig_Ref_stDev;	
+		document.getElementById("LVsigVADDStdev").innerHTML = LVsig_VADD_stDev;
+		document.getElementById("LVsigVHDDStdev").innerHTML = LVsig_VHDD_stDev;
+		document.getElementById("LVsigVHSSStdev").innerHTML = LVsig_VHSS_stDev;			
+		
+		document.getElementById("LVsigsampleCnt").innerHTML = "Number of samples: " + LVsig_sample_cnt;	
+		
+		
+		//SIGGEN 
+		document.getElementById("SiggenFreq").innerHTML = "Frequency: " + Siggen_freq + " Hz";	
+		
+		//TEMPERATURE
+		document.getElementById("TemperatureSampleCnt").innerHTML = "Number of samples: " + Temperature_sample_cnt;	
+		document.getElementById("TemperatureAvg").innerHTML = "Average temperature [°C]: " + Temperature_val_avg;	
+		
+		
+		//CURRENT SHUNT COMBOBOX
+		var items = [
+					"0",
+                    "100",
+                    "125",
+                    "250",               
+		        ];
+        $("#jqxComboBox").jqxComboBox({ source: items, selectedIndex: 0, width: '55px', height: '25px', theme: 'shinyblack',dropDownHeight: 125, });
+
+		$('#jqxTabs').jqxTabs({ width: 530, height: 550});	   		  	   
+	});
+
+	/******************************************************************/
+	
+	
+	/******************************************************************/
+    /* UPDATE BUTTON*/
+    $("#jqxAppUpdateButton").on('click',function()
+    {
+		
+		Afe_control_tab = $('#jqxTabs').jqxTabs('selectedItem');  // Return selected index
+		
+		
+		/************************************************************************************/
+	    /*Signal generator*/
+		siggen_enabled = $("#jqxSwitchButtonEnableSiggen").jqxSwitchButton('checked');
+		siggen_signal_type = $("#jqxSwitchButtonSignalType").jqxSwitchButton('checked');
+		siggen_freq = $('#jqxSliderSetSpeedM1').jqxSlider('getValue');	
+		
+		var signal_type_num;
+		var signal_enable_num;
+		
+		
+		if(!siggen_signal_type)
+		{
+			signal_type_num = 0;
+		}
+		else
+		{
+			signal_type_num = 1;
+		}
+		
+		if(!siggen_enabled)
+		{
+			signal_enable_num = 0;
+		}
+		else
+		{
+			signal_enable_num = 1;
+		}
+		
+		write_variable("riop_command_buffer.siggen_control_command.enable", signal_enable_num);
+		write_variable("riop_command_buffer.siggen_control_command.type", signal_type_num);
+		write_variable("riop_command_buffer.siggen_control_command.frequency", $('#jqxSliderSetSpeedM1').jqxSlider('getValue'));
+		write_variable("riop_command_buffer.siggen_control_command.is_dirty", Siggen_dirty);
+		
+		Siggen_dirty = 0;
+		
+		
+		/************************************************************************************/
+		 /*MCU digital outputs*/
+		
+	    // Get SoC output state
+		PlcGPIO_7_state = $('#jqxSwitchButtonPlcOut0').jqxSwitchButton('checked');
+		PlcGPIO_8_state = $('#jqxSwitchButtonPlcOut1').jqxSwitchButton('checked');
+		PlcGPIO_9_state = $('#jqxSwitchButtonPlcOut2').jqxSwitchButton('checked');
+		PlcGPIO_10_state = $('#jqxSwitchButtonPlcOut3').jqxSwitchButton('checked');
+		PlcGPIO_11_state = $('#jqxSwitchButtonPlcOut4').jqxSwitchButton('checked');
+		PlcGPIO_12_state = $('#jqxSwitchButtonPlcOut5').jqxSwitchButton('checked');
+		PlcGPIO_13_state = $('#jqxSwitchButtonPlcOut6').jqxSwitchButton('checked');
+		PlcGPIO_14_state = $('#jqxSwitchButtonPlcOut7').jqxSwitchButton('checked');
+		
+		var plc_outputs =  (PlcGPIO_14_state << 7) | (PlcGPIO_13_state << 6) | (PlcGPIO_12_state << 5) |(PlcGPIO_11_state << 4) |(PlcGPIO_10_state << 3) |(PlcGPIO_9_state << 2) | (PlcGPIO_8_state << 1) | (PlcGPIO_7_state);
+		write_variable('riop_command_buffer.mcu_digital_output_command.mcu_digital_output', plc_outputs);
+		write_variable("riop_command_buffer.mcu_digital_output_command.is_dirty", PlcDigOutput_dirty);
+		
+		PlcDigOutput_dirty = 0;
+		
+		
+		/************************************************************************************/
+		// AFE GPIO DIR + VALUE
+		
+		var afe_gpios_dir = 0;
+		for(let i = 9 ; i > 1 ; i--)
+		{
+			afe_gpios_dir |= (AfeGPIO_dir[i] << i);
+		}
+		write_variable("riop_command_buffer.afe_command.afe_gpio_command.gpio_pin_direction", afe_gpios_dir);
+		
+		var afe_gpios_out = 0;
+		for(let i = 9 ; i > 1 ; i--)
+		{
+			afe_gpios_out |= (AfeGPIO_out[i] << i);
+		}
+		write_variable("riop_command_buffer.afe_command.afe_gpio_command.gpio_output_value", afe_gpios_out);
+		
+		write_variable("riop_command_buffer.afe_command.afe_gpio_command.is_dirty", AfeGPIO_dirty);
+		
+		AfeGPIO_dirty = 0;
+		
+		
+		
+		switch(Afe_control_tab)
+		{
+			case 0:
+				/************************************************************************************/
+				/*AFE HVSIG*/
+		
+				const HVsigArray = new Array(0,0,0);
+						
+				for(let i = 1; i < 4; i++)
+				{
+					if(!($('#jqxSwitchButtonHvsigCH'+i+'Enable').jqxSwitchButton('checked')))
+					{
+						HVsigArray[i-1] = 0;
+					}
+					else
+					{
+						HVsigArray[i-1] = 1;
+					}
+				}
+		
+				pcm.WriteUIntArray ('riop_command_buffer.afe_command.afe_hvsig_command.channel_enable', 0, 1, HVsigArray);
+				write_variable("riop_command_buffer.afe_command.afe_hvsig_command.is_dirty", HVsig_dirty);
+				HVsig_dirty = 0;
+				
+				write_variable("riop_command_buffer.afe_command.afe_lvsig_command.is_dirty", 0);
+				write_variable("riop_command_buffer.afe_command.afe_current_command.is_dirty", 0);
+				write_variable("riop_command_buffer.afe_command.afe_temperature_command.is_dirty", 0);
+			
+				break;
+				
+			case 1:
+				/************************************************************************************/
+				/*AFE LVSIG*/
+		
+				const LVsigArray = new Array(0,0,0,0,0);
+				
+				for(let i = 1; i < 6; i++)
+				{
+					if(!($('#jqxSwitchButtonLvsigCH'+i+'Enable').jqxSwitchButton('checked')))
+					{
+						LVsigArray[i-1] = 0;
+					}
+					else
+					{
+						LVsigArray[i-1] = 1;
+					}
+				}
+				
+				LVsig_sample_cnt = $('#jqxSliderLVsigSampleCnt').jqxSlider('getValue');
+				write_variable('riop_command_buffer.afe_command.afe_lvsig_command.samples_amt', LVsig_sample_cnt);
+				
+				pcm.WriteUIntArray ('riop_command_buffer.afe_command.afe_lvsig_command.channel_enable', 0, 1, LVsigArray);
+				write_variable("riop_command_buffer.afe_command.afe_lvsig_command.is_dirty", LVsig_dirty);
+								
+				write_variable("riop_command_buffer.afe_command.afe_hvsig_command.is_dirty", 0);
+				write_variable("riop_command_buffer.afe_command.afe_current_command.is_dirty", 0);
+				write_variable("riop_command_buffer.afe_command.afe_temperature_command.is_dirty", 0);
+				
+				$('#jqxAppUpdateButton').jqxButton({disabled: true });
+				
+		
+				break;
+			
+			case 2:
+				/************************************************************************************/
+				/*AFE CURRENT*/
+				var CurrentEnabled = 0;
+				
+				if(!($('#jqxSwitchButtonCurrentCH1Enable').jqxSwitchButton('checked')))
+				{
+					CurrentEnabled = 0;
+				}
+				else
+				{
+					CurrentEnabled = 1;
+				}
+				
+				write_variable("riop_command_buffer.afe_command.afe_current_command.measurement_enabled", CurrentEnabled);
+				
+				var Current_shunt_val_index = $("#jqxComboBox").jqxComboBox('getSelectedIndex');
+				var Current_shunt_val = 0;
+				
+				switch(Current_shunt_val_index)
+				{
+					case 0:
+						Current_shunt_val = 0;
+						break;
+					
+					case 1:
+						Current_shunt_val = 100;
+						break;
+						
+					case 2:
+						Current_shunt_val = 125;
+						break;
+						
+					case 3:
+						Current_shunt_val = 250;
+						break;
+				
+					default:
+						Current_shunt_val = 0;
+				}
+					
+				write_variable("riop_command_buffer.afe_command.afe_current_command.shunt_value", Current_shunt_val);
+				write_variable("riop_command_buffer.afe_command.afe_current_command.is_dirty", Current_dirty);
+				Current_dirty = 0;
+				
+				write_variable("riop_command_buffer.afe_command.afe_hvsig_command.is_dirty", 0);
+				write_variable("riop_command_buffer.afe_command.afe_lvsig_command.is_dirty", 0);
+				write_variable("riop_command_buffer.afe_command.afe_temperature_command.is_dirty", 0);
+				break;
+				
+			case 3:
+				/************************************************************************************/
+				/*AFE TEMPERATURE*/
+				var TemperatureEnabled = 0;
+				
+				if(!($('#jqxSwitchButtonTemperatureCH1Enable').jqxSwitchButton('checked')))
+				{
+					TemperatureEnabled = 0;
+				}
+				else
+				{
+					TemperatureEnabled = 1;
+				}
+				
+				Temperature_sample_cnt = $('#jqxSliderTemperatureSampleCnt').jqxSlider('getValue');
+				write_variable("riop_command_buffer.afe_command.afe_temperature_command.samples_amt", Temperature_sample_cnt);
+				write_variable("riop_command_buffer.afe_command.afe_temperature_command.measurement_enabled", TemperatureEnabled);
+				write_variable("riop_command_buffer.afe_command.afe_temperature_command.is_dirty", Temperature_dirty);
+								
+				write_variable("riop_command_buffer.afe_command.afe_hvsig_command.is_dirty", 0);
+				write_variable("riop_command_buffer.afe_command.afe_lvsig_command.is_dirty", 0);
+				write_variable("riop_command_buffer.afe_command.afe_current_command.is_dirty", 0);
+				
+				$('#jqxAppUpdateButton').jqxButton({disabled: true });
+				
+				SafeTimer = setTimeout(enable_button, 5000);
+				
+				
+				
+				break;
+				
+			default:
+				HVsig_dirty = 0;
+				LVsig_dirty = 0;
+				Current_dirty = 0;
+				Temperature_dirty = 0;
+		}
+		
+		write_variable('FRM_dataReady', 1);
+    });
+	
+	/******************************************************************/
+
+
+	/******************************************************************/
+	/* ON CHANGE/CLICK EVENTS CALLBACKS DEFINITIONS */
+	
+	/*SIGGEN*/
+    $("#jqxSwitchButtonEnableSiggen").on('change', function (event) {
+		Siggen_dirty = 1;   
+    });
+
+	$("#jqxSwitchButtonSignalType").on('change', function (event) {
+		Siggen_dirty = 1;   
+    });
+	
+	$('#jqxSliderSetSpeedM1').on('change', function (event)
+	{	       
+		Siggen_freq = $('#jqxSliderSetSpeedM1').jqxSlider('getValue');
+		document.getElementById("SiggenFreq").innerHTML = "Frequency: " + Siggen_freq + " Hz";
+		Siggen_dirty = 1;
+	});
+	
+	
+	
+	/*MCU DIGITAL OUT*/
+	$("#jqxSwitchButtonPlcOut0").on('change', function (event) {
+		PlcDigOutput_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonPlcOut1").on('change', function (event) {
+		PlcDigOutput_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonPlcOut2").on('change', function (event) {
+		PlcDigOutput_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonPlcOut3").on('change', function (event) {
+		PlcDigOutput_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonPlcOut4").on('change', function (event) {
+		PlcDigOutput_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonPlcOut5").on('change', function (event) {
+		PlcDigOutput_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonPlcOut6").on('change', function (event) {
+		PlcDigOutput_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonPlcOut7").on('change', function (event) {
+		PlcDigOutput_dirty = 1;   
+    });
+	
+	
+	/*HVSIG*/
+	$("#jqxSwitchButtonHvsigCH1Enable").on('change', function (event) {
+		HVsig_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonHvsigCH2Enable").on('change', function (event) {
+		HVsig_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonHvsigCH3Enable").on('change', function (event) {
+		HVsig_dirty = 1;   
+    });
+	
+	
+	/*LVSIG*/
+	$("#jqxSwitchButtonLvsigCH1Enable").on('change', function (event) {
+		LVsig_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonLvsigCH2Enable").on('change', function (event) {
+		LVsig_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonLvsigCH3Enable").on('change', function (event) {
+		LVsig_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonLvsigCH4Enable").on('change', function (event) {
+		LVsig_dirty = 1;   
+    });
+	
+	$("#jqxSwitchButtonLvsigCH5Enable").on('change', function (event) {
+		LVsig_dirty = 1;   
+    });
+	
+	$('#jqxSliderLVsigSampleCnt').on('change', function (event)
+	{	       
+		LVsig_sample_cnt = $('#jqxSliderLVsigSampleCnt').jqxSlider('getValue');
+		document.getElementById("LVsigsampleCnt").innerHTML = "Number of samples: " + LVsig_sample_cnt;	
+		LVsig_dirty = 1;    		  	   
+	});
+
+	
+	/*CURRENT*/
+	$("#jqxSwitchButtonCurrentCH1Enable").on('change', function (event) {
+		Current_dirty = 1;   
+    });
+	
+	$("#jqxComboBox").on('change', function (event) {
+		Current_dirty = 1;   
+    });
+	
+	
+	/*TEMPERATURE*/	
+	$("#jqxSwitchButtonTemperatureCH1Enable").on('change', function (event) {
+		Temperature_dirty = 1;   
+    });
+	
+	$('#jqxSliderTemperatureSampleCnt').on('change', function (event)
+	    {	       
+		Temperature_sample_cnt = $('#jqxSliderTemperatureSampleCnt').jqxSlider('getValue');
+		document.getElementById("TemperatureSampleCnt").innerHTML = "Number of samples: " + Temperature_sample_cnt;	
+		Temperature_dirty = 1; 
+	});
+	
+	
+	/*AFE GPIO DIRECTION*/
+	$('#jqxSwitchButtonGPIO2').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO2').jqxSwitchButton('checked') == false)
+		{
+			AfeGPIO_dir[2] = 0;	// INPUT
+			$('#jqxSwitchButtonGPIO2Val').jqxSwitchButton({disabled: true });
+			$('#jqxSwitchButtonGPIO2Val').jqxSwitchButton({checked: false });
+			AfeGPIO_out[2] = 0;
+		}
+		else
+		{
+			AfeGPIO_dir[2] = 1;	// OUTPUT
+			$('#jqxSwitchButtonGPIO2Val').jqxSwitchButton({disabled: false });
+		}	
+		
+		AfeGPIO_dirty = 1;
+				   		  	   
+	});
+
+	$('#jqxSwitchButtonGPIO3').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO3').jqxSwitchButton('checked') == false)
+		{
+			AfeGPIO_dir[3] = 0;	// INPUT
+			$('#jqxSwitchButtonGPIO3Val').jqxSwitchButton({disabled: true });
+			$('#jqxSwitchButtonGPIO3Val').jqxSwitchButton({checked: false });
+			AfeGPIO_out[3] = 0;
+		}
+		else
+		{
+			AfeGPIO_dir[3] = 1;	// OUTPUT
+			$('#jqxSwitchButtonGPIO3Val').jqxSwitchButton({disabled: false });
+		}
+			
+		AfeGPIO_dirty = 1;
+	});
+
+	$('#jqxSwitchButtonGPIO4').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO4').jqxSwitchButton('checked') == false)
+		{
+			AfeGPIO_dir[4] = 0;	// INPUT
+			$('#jqxSwitchButtonGPIO4Val').jqxSwitchButton({disabled: true });
+			$('#jqxSwitchButtonGPIO4Val').jqxSwitchButton({checked: false });
+			AfeGPIO_out[4] = 0;
+		}
+		else
+		{
+			AfeGPIO_dir[4] = 1;	// OUTPUT
+			$('#jqxSwitchButtonGPIO4Val').jqxSwitchButton({disabled: false });
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});
+
+	$('#jqxSwitchButtonGPIO5').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO5').jqxSwitchButton('checked') == false)
+		{
+			AfeGPIO_dir[5] = 0;	// INPUT
+			$('#jqxSwitchButtonGPIO5Val').jqxSwitchButton({disabled: true });
+			$('#jqxSwitchButtonGPIO5Val').jqxSwitchButton({checked: false });
+			AfeGPIO_out[5] = 0;
+		}
+		else
+		{
+			AfeGPIO_dir[5] = 1;	// OUTPUT
+			$('#jqxSwitchButtonGPIO5Val').jqxSwitchButton({disabled: false });
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});
+	
+	$('#jqxSwitchButtonGPIO6').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO6').jqxSwitchButton('checked') == false)
+		{
+			AfeGPIO_dir[6] = 0;	// INPUT
+			$('#jqxSwitchButtonGPIO6Val').jqxSwitchButton({disabled: true });
+			$('#jqxSwitchButtonGPIO6Val').jqxSwitchButton({checked: false });
+			AfeGPIO_out[6] = 0;
+		}
+		else
+		{
+			AfeGPIO_dir[6] = 1;	// OUTPUT
+			$('#jqxSwitchButtonGPIO6Val').jqxSwitchButton({disabled: false });
+		}
+		
+
+		AfeGPIO_dirty = 1;		   		  	   
+	});		
+		
+	$('#jqxSwitchButtonGPIO7').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO7').jqxSwitchButton('checked') == false)
+		{
+			AfeGPIO_dir[7] = 0;	// INPUT
+			$('#jqxSwitchButtonGPIO7Val').jqxSwitchButton({disabled: true });
+			$('#jqxSwitchButtonGPIO7Val').jqxSwitchButton({checked: false });
+			AfeGPIO_out[7] = 0;
+		}
+		else
+		{
+			AfeGPIO_dir[7] = 1;	// OUTPUT
+			$('#jqxSwitchButtonGPIO7Val').jqxSwitchButton({disabled: false });
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});
+	
+	$('#jqxSwitchButtonGPIO8').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO8').jqxSwitchButton('checked') == false)
+		{
+			AfeGPIO_dir[8] = 0;	// INPUT
+			$('#jqxSwitchButtonGPIO8Val').jqxSwitchButton({disabled: true });
+			$('#jqxSwitchButtonGPIO8Val').jqxSwitchButton({checked: false });
+			AfeGPIO_out[8] = 0;
+		}
+		else
+		{
+			AfeGPIO_dir[8] = 1;	// OUTPUT
+			$('#jqxSwitchButtonGPIO8Val').jqxSwitchButton({disabled: false });
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});
+	
+	$('#jqxSwitchButtonGPIO9').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO9').jqxSwitchButton('checked') == false)
+		{
+			AfeGPIO_dir[9] = 0;	// INPUT
+			$('#jqxSwitchButtonGPIO9Val').jqxSwitchButton({disabled: true });
+			$('#jqxSwitchButtonGPIO9Val').jqxSwitchButton({checked: false });
+			AfeGPIO_out[9] = 0;
+		}
+		else
+		{
+			AfeGPIO_dir[9] = 1;	// OUTPUT
+			$('#jqxSwitchButtonGPIO9Val').jqxSwitchButton({disabled: false });
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});
+	
+	
+	/*AFE GPIO OUTPUT VALUE*/
+		$('#jqxSwitchButtonGPIO2Val').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO2Val').jqxSwitchButton('checked') == true)
+		{
+			AfeGPIO_out[2] = 0;	
+		}
+		else
+		{
+			AfeGPIO_out[2] = 1;	
+		}
+				
+		AfeGPIO_dirty = 1;
+				   		  	   
+	});
+
+	$('#jqxSwitchButtonGPIO3Val').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO3Val').jqxSwitchButton('checked') == true)
+		{
+			AfeGPIO_out[3] = 0;	
+		}
+		else
+		{
+			AfeGPIO_out[3] = 1;	
+		}
+			
+		AfeGPIO_dirty = 1;
+	});
+
+	$('#jqxSwitchButtonGPIO4Val').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO4Val').jqxSwitchButton('checked') == true)
+		{
+			AfeGPIO_out[4] = 0;	
+		}
+		else
+		{
+			AfeGPIO_out[4] = 1;	
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});
+
+	$('#jqxSwitchButtonGPIO5Val').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO5Val').jqxSwitchButton('checked') == true)
+		{
+			AfeGPIO_out[5] = 0;	
+		}
+		else
+		{
+			AfeGPIO_out[5] = 1;	
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});
+	
+	$('#jqxSwitchButtonGPIO6Val').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO6Val').jqxSwitchButton('checked') == true)
+		{
+			AfeGPIO_out[6] = 0;	
+		}
+		else
+		{
+			AfeGPIO_out[6] = 1;	
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});		
+		
+	$('#jqxSwitchButtonGPIO7Val').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO7Val').jqxSwitchButton('checked') == true)
+		{
+			AfeGPIO_out[7] = 0;	
+		}
+		else
+		{
+			AfeGPIO_out[7] = 1;	
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});
+	
+	$('#jqxSwitchButtonGPIO8Val').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO8Val').jqxSwitchButton('checked') == true)
+		{
+			AfeGPIO_out[8] = 0;	
+		}
+		else
+		{
+			AfeGPIO_out[8] = 1;	
+		}
+		
+		AfeGPIO_dirty = 1;		   		  	   
+	});
+	
+	$('#jqxSwitchButtonGPIO9Val').on('change', function (event)
+	{	       
+		if($('#jqxSwitchButtonGPIO9Val').jqxSwitchButton('checked') == true)
+		{
+			AfeGPIO_out[9] = 0;	
+		}
+		else
+		{
+			AfeGPIO_out[9] = 1;	// OUTPUT
+		}
+	
+		AfeGPIO_dirty = 1;	
+		
+	});
+	
+	
+	/*AFE CALIBRATION*/
+	
+	$('#jqxRadioButtonCalibrationVoltage').on('checked', function (event)
+	{	       
+		document.getElementById("cal_text_1").innerHTML = "Insert positive value measured on DMM";
+		document.getElementById("cal_text_2").innerHTML = "Insert negative value measured on DMM";
+	});
+	
+	$('#jqxRadioButtonCalibrationResistance').on('checked', function (event)
+	{	       
+		document.getElementById("cal_text_1").innerHTML = "Insert calculated value for lower limit of the calibrated range";
+		document.getElementById("cal_text_2").innerHTML = "Insert calculated value for upper limit of the calibrated range";
+	});
+	
+	$("#jqxCalStartButton").on('click',function()
+	{
+		$('#jqxCalStartButton').jqxButton({disabled: true });
+		$('#jqxAppUpdateButton').jqxButton({disabled: true });
+		$('#jqxRadioButtonCalibrationVoltage').jqxRadioButton({disabled: true });
+		$('#jqxRadioButtonCalibrationResistance').jqxRadioButton({disabled: true });	
+		$('#jqxTabs').jqxTabs('disable');
+		$('#jqxTabs').jqxTabs('enableAt', 5); 
+		$('#jqxTabs').jqxTabs('select', 5); 
+		
+		
+		
+		if($('#jqxRadioButtonCalibrationVoltage').jqxRadioButton('checked'))
+		{
+			Calibration_method = 0;
+		}
+		else
+		{
+			Calibration_method = 1;
+		}
+		
+		write_variable("riop_command_buffer.afe_command.afe_calibration_command.calibration_method", Calibration_method);
+		write_variable("riop_command_buffer.afe_command.afe_calibration_command.calibration_start", 1);
+		
+		write_variable("riop_command_buffer.afe_command.afe_calibration_command.is_dirty", 1);
+		
+		write_variable("riop_command_buffer.afe_command.afe_hvsig_command.is_dirty", 0);
+		write_variable("riop_command_buffer.afe_command.afe_lvsig_command.is_dirty", 0);
+		write_variable("riop_command_buffer.afe_command.afe_current_command.is_dirty", 0);
+		write_variable("riop_command_buffer.afe_command.afe_temperature_command.is_dirty", 0);
+		
+		write_variable('FRM_dataReady', 1);
+	
+	});
+	
+	$("#jqxCalUpdateButton").on('click',function()
+	{
+		var inputValue = 0;
+		var inputValue_float = 0.0;
+		
+		if(Calibration_phase == 1)
+		{
+			inputValue = $('#jqxCalInput1').val();
+			inputValue_float = parseFloat(inputValue);
+			
+			write_variable("riop_command_buffer.afe_command.afe_calibration_command.calibration_method", Calibration_method);
+			pcm.WriteDoubleVariable("riop_command_buffer.afe_command.afe_calibration_command.inserted_sample_1", inputValue_float, 8);
+			$('#jqxCalInput1').jqxInput({disabled: true });	
+		}
+		else if(Calibration_phase == 2)
+		{
+			inputValue = $('#jqxCalInput2').val();
+			inputValue_float = parseFloat(inputValue);
+			
+			write_variable("riop_command_buffer.afe_command.afe_calibration_command.calibration_method", Calibration_method);
+			pcm.WriteDoubleVariable("riop_command_buffer.afe_command.afe_calibration_command.inserted_sample_2", inputValue_float, 8);
+			
+			$('#jqxCalInput2').jqxInput({disabled: true });
+		}
+		
+		write_variable("riop_command_buffer.afe_command.afe_calibration_command.is_dirty", 1);
+		write_variable('FRM_dataReady', 1);
+	});
+	
+	
+	
+	
+	
+	
+	/***********************************************************************************/
+	
+	
+    </script>
+
+
+</body>
+</html>

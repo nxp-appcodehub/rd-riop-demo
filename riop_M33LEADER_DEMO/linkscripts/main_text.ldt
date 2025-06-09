@@ -1,0 +1,11 @@
+*(EXCLUDE_FILE(	
+	
+	*cyclic_task.o*
+	*rpmsg_lite*
+	*freemaster*
+	*rtos*
+	*lwip*
+	*libcr_eabihelpers.a:*
+
+) *.text*) 
+

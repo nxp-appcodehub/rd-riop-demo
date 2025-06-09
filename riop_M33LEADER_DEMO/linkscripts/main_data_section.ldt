@@ -1,0 +1,30 @@
+<#if configMemory?has_content>
+<#list configMemory as memory>
+<#if memory.RAM && memory.defaultRAM>
+
+    /* Main DATA section (${memory.name}) */
+<#if (PLAIN_LOAD_IMAGE) && (memory.name == CODEX) >
+    .data : ALIGN_WITH_INPUT
+<#else>  
+    .data : ALIGN(${data_align})
+</#if>
+	{
+		FILL(0xff)
+		_data = . ;
+		PROVIDE(__start_data_${memory.alias} = .) ;
+		PROVIDE(__start_data_${memory.name} = .) ;
+		*(vtable)
+		*(.ramfunc*)
+
+		KEEP(*(DataQuickAccess))
+		*(RamFunction)
+
+<#include "main_data.ldt">
+		. = ALIGN(${data_align}) ;
+		_edata = . ;
+		PROVIDE(__end_data_${memory.alias} = .) ;
+		PROVIDE(__end_data_${memory.name} = .) ;
+	} > ${memory.name} AT>${CODE}
+</#if>
+</#list>
+</#if>
