@@ -7,3 +7,7 @@
 !/Debug/*.ld
 !/Debug/riop_M33LEADER_DEMO.axf
 !/Release/*.ld
+!/Release/riop_M33LEADER_DEMO.axf
+
+cscope.out
+tags

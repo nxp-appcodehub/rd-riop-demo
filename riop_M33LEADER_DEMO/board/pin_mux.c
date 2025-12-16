@@ -12,11 +12,11 @@
 /*
  * TEXT BELOW IS USED AS SETTING FOR TOOLS *************************************
 !!GlobalInfo
-product: Pins v16.0
+product: Pins v17.0
 processor: MIMXRT1189xxxxx
 package_id: MIMXRT1189CVM8B
 mcu_data: ksdk2_0
-processor_version: 16.3.0
+processor_version: 25.06.10
 external_user_signals: {}
 pin_labels:
 - {pin_num: B1, pin_signal: GPIO_AON_08, label: LPUART1_TX, identifier: LPUART1_TX}
@@ -363,10 +363,10 @@ BOARD_Init_NETC_ENETC0_ETH4_PHY_Config_Pins:
 - pin_list:
   - {pin_num: N5, peripheral: NETC, signal: netc_emdc, pin_signal: GPIO_EMC_B2_00, identifier: NETC_ETH4_EMDC, software_input_on: Disable, pull_down_pull_up_config: Pull_Down,
     pdrv_config: High_Driver, open_drain: Disable}
-  - {pin_num: R2, peripheral: NETC, signal: netc_emdio, pin_signal: GPIO_EMC_B2_01, identifier: NETC_ETH4_EMDIO, software_input_on: Disable, pull_down_pull_up_config: Pull_Down,
+  - {pin_num: R2, peripheral: NETC, signal: netc_emdio, pin_signal: GPIO_EMC_B2_01, identifier: NETC_ETH4_EMDIO, software_input_on: Disable, pull_down_pull_up_config: Pull_Up,
+    pdrv_config: High_Driver, open_drain: Enable}
+  - {pin_num: T5, peripheral: RGPIO3, signal: 'gpio_io, 13', pin_signal: GPIO_EMC_B2_03, direction: OUTPUT, gpio_init_state: 'true', software_input_on: Disable, pull_down_pull_up_config: Pull_Down,
     pdrv_config: High_Driver, open_drain: Disable}
-  - {pin_num: T5, peripheral: RGPIO3, signal: 'gpio_io, 13', pin_signal: GPIO_EMC_B2_03, direction: INPUT, gpio_interrupt: kRGPIO_InterruptOrDMADisabled, gpio_interrupt_output: kRGPIO_InterruptOutput0,
-    software_input_on: Disable, pull_down_pull_up_config: Pull_Down, pdrv_config: High_Driver, open_drain: Disable}
  * BE CAREFUL MODIFYING THIS COMMENT - IT IS YAML SETTINGS FOR TOOLS ***********
  */
 
@@ -381,13 +381,11 @@ void BOARD_Init_NETC_ENETC0_ETH4_PHY_Config_Pins(void) {
 
   /* GPIO configuration of NETC_ETH4_RESET on GPIO_EMC_B2_03 (pin T5) */
   rgpio_pin_config_t NETC_ETH4_RESET_config = {
-      .pinDirection = kRGPIO_DigitalInput,
-      .outputLogic = 0U,
+      .pinDirection = kRGPIO_DigitalOutput,
+      .outputLogic = 1U,
   };
   /* Initialize GPIO functionality on GPIO_EMC_B2_03 (pin T5) */
   RGPIO_PinInit(RGPIO3, 13U, &NETC_ETH4_RESET_config);
-  /* Configures GPIO pin interrupt/DMA request on GPIO_EMC_B2_03 (pin T5) */
-  RGPIO_SetPinInterruptConfig(RGPIO3, 13U, kRGPIO_InterruptOutput0, kRGPIO_InterruptOrDMADisabled);
 
   IOMUXC_SetPinMux(
       IOMUXC_GPIO_EMC_B2_00_NETC_EMDC,        /* GPIO_EMC_B2_00 is configured as NETC_EMDC */
@@ -405,9 +403,9 @@ void BOARD_Init_NETC_ENETC0_ETH4_PHY_Config_Pins(void) {
                                                  Open Drain Field: Disabled */
   IOMUXC_SetPinConfig(
       IOMUXC_GPIO_EMC_B2_01_NETC_EMDIO,       /* GPIO_EMC_B2_01 PAD functional properties : */
-      0x08U);                                 /* PDRV Field: high driver
-                                                 Pull Down Pull Up Field: PD
-                                                 Open Drain Field: Disabled */
+      0x14U);                                 /* PDRV Field: high driver
+                                                 Pull Down Pull Up Field: PU
+                                                 Open Drain Field: Enabled */
   IOMUXC_SetPinConfig(
       IOMUXC_GPIO_EMC_B2_03_GPIO3_IO13,       /* GPIO_EMC_B2_03 PAD functional properties : */
       0x08U);                                 /* PDRV Field: high driver

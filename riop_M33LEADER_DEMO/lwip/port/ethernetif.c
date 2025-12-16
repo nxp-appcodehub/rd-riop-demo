@@ -64,6 +64,7 @@
 
 #include "ethernetif.h"
 #include "ethernetif_priv.h"
+#include "pin_mux.h"
 
 /*******************************************************************************
  * Definitions
@@ -189,6 +190,11 @@ void ethernetif_phy_init(struct ethernetif *ethernetif, const ethernetif_config_
     };
 
     LWIP_PLATFORM_DIAG(("Initializing PHY...\r\n"));
+
+    RGPIO_PinWrite(NETC_ETH4_RESET_GPIO, NETC_ETH4_RESET_GPIO_PIN, 0);
+    SDK_DelayAtLeastUs(150000, SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY);
+    RGPIO_PinWrite(NETC_ETH4_RESET_GPIO, NETC_ETH4_RESET_GPIO_PIN, 1);
+    SDK_DelayAtLeastUs(150000, SDK_DEVICE_MAXIMUM_CPU_CLOCK_FREQUENCY);
 
     status = PHY_Init(ethernetifConfig->phyHandle, &phyConfig);
 

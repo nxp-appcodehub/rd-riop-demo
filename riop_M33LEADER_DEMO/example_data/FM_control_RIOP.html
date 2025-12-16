@@ -368,14 +368,14 @@
 </div>	
 
 	
-	<script language="VBScript">
+<script language="VBScript">
 	Sub pcm_OnVariableChanged(varName , nSubscriptionId)
 		event_OnVariableChanged varName, nSubscriptionId
 	End Sub
 </script>
 	
 
-	<script type="text/javascript">
+<script type="text/javascript">
 
 	
 	/****************************************************************/
@@ -495,9 +495,9 @@
 		pcm.WriteDoubleVariable(name, 8, value);
 	}
 	
-	function suscribe_variable(name)
+	function subscribe_variable(name)
     {
-        return pcm.SubscribeVariable(name, 100);   
+        return pcm.SubscribeVariable(name, 100);
     }
 	
 	function enable_button()
@@ -1186,107 +1186,116 @@
 	
 	/******************************************************************/
 	/*FUNCTIONS FOR READ INPUT SIGNALS*/
-	
+
+	function sleep(ms) {
+		return new Promise(resolve => setTimeout(resolve, ms));
+	}
+
+	async function wait() {
+		console.log("Waiting for PDM to be initialized");
+		await sleep(1000);  // Waits for 1 second
+		console.log("Finished waiting.");
+	}
+
 	//VARIABLE SUBSCRIBE
 	function pcm_OnBoardDetected() {
-		soc_inputs_id = suscribe_variable('riop_status_buffer.mcu_digital_input_pins_status');
-		afe_inputs_id = suscribe_variable('riop_status_buffer.afe_status.afe_gpio_input_pins_status');
-		afe_lvsig_mean = suscribe_variable('riop_status_buffer.afe_status.lvsig_status.channel_mean');
-		afe_lvsig_stdev = suscribe_variable('riop_status_buffer.afe_status.lvsig_status.channel_stdev');	
-		afe_temp_mean = suscribe_variable('riop_status_buffer.afe_status.temperature_status.channel_value');
-		afe_cal_phase = suscribe_variable('riop_status_buffer.afe_status.calibration_status.calibration_phase');
+		wait().then(() => {
+			soc_inputs_id = subscribe_variable('riop_status_buffer.mcu_digital_input_pins_status');
+			afe_inputs_id = subscribe_variable('riop_status_buffer.afe_status.afe_gpio_input_pins_status');
+			afe_lvsig_mean = subscribe_variable('riop_status_buffer.afe_status.lvsig_status.channel_mean');
+			afe_lvsig_stdev = subscribe_variable('riop_status_buffer.afe_status.lvsig_status.channel_stdev');	
+			afe_temp_mean = subscribe_variable('riop_status_buffer.afe_status.temperature_status.channel_value');
+			afe_cal_phase = subscribe_variable('riop_status_buffer.afe_status.calibration_status.calibration_phase');
 			
-		
-		
-		//SIGGEN
-		pcm.ReadVariable("riop_status_buffer.siggen_status.enabled", vValue0, tValue0, retMsg)
-		Siggen_enabled = pcm.LastVariable_vValue;
-		
-		if(Siggen_enabled == 0)
-		{
-			$('#jqxSwitchButtonEnableSiggen').jqxSwitchButton({checked: false });
-		}
-		else
-		{
-			$('#jqxSwitchButtonEnableSiggen').jqxSwitchButton({checked: true });
-		}
-		
-		pcm.ReadVariable("riop_status_buffer.siggen_status.type", vValue0, tValue0, retMsg);
-		siggen_signal_type = pcm.LastVariable_vValue; 
-		if(siggen_signal_type == 0)
-		{
-			$("#jqxSwitchButtonSignalType").jqxSwitchButton({checked: false });
-		}
-		else
-		{
-			$("#jqxSwitchButtonSignalType").jqxSwitchButton({checked: true });
-		}
-		
-		pcm.ReadVariable("riop_status_buffer.siggen_status.frequency", vValue0, tValue0, retMsg);
-		siggen_freq = pcm.LastVariable_vValue; 
-		$('#jqxSliderSetSpeedM1').jqxSlider('setValue', siggen_freq);
-		
-		document.getElementById("SiggenFreq").innerHTML = "Frequency: " + siggen_freq + " Hz";
-		
-		
-		//MCU DIG OUTPUT
-		pcm.ReadVariable("riop_status_buffer.mcu_digital_output_pins_status", vValue0, tValue0, retMsg)
-		let status_outputs = pcm.LastVariable_vValue;  
-		
-		for(let i = 0; i < 8; i++)
-		{
-			let status = (status_outputs & (0x1<<i));
-			
-			let text = ('#jqxSwitchButtonPlcOut'+i);
-		
-			if((status != 0))
+			//SIGGEN
+			pcm.ReadVariable("riop_status_buffer.siggen_status.enabled", vValue0, tValue0, retMsg);
+			Siggen_enabled = pcm.LastVariable_vValue;
+			if(Siggen_enabled == 0)
 			{
-				$('#jqxSwitchButtonPlcOut'+i).jqxSwitchButton({checked: true });
+				$('#jqxSwitchButtonEnableSiggen').jqxSwitchButton({checked: false });
 			}
 			else
 			{
-				$('#jqxSwitchButtonPlcOut'+i).jqxSwitchButton({checked: false });
+				$('#jqxSwitchButtonEnableSiggen').jqxSwitchButton({checked: true });
 			}
-		}
-		
-		
-		// AFE GPIOs
-		pcm.ReadVariable("riop_status_buffer.afe_status.afe_gpio_pins_direction_status", vValue0, tValue0, retMsg)
-		let gpio_dir = pcm.LastVariable_vValue;
-		
-		pcm.ReadVariable("riop_status_buffer.afe_status.afe_gpio_output_pins_status", vValue0, tValue0, retMsg)
-		let gpio_out = pcm.LastVariable_vValue;
-		
-		for(let i = 2; i < 10; i++)
-		{	
-			let status_dir = (gpio_dir & (0x1<<i));
 			
-			if(status_dir != 0)		
+			pcm.ReadVariable("riop_status_buffer.siggen_status.type", vValue0, tValue0, retMsg);
+			siggen_signal_type = pcm.LastVariable_vValue; 
+			if(siggen_signal_type == 0)
 			{
-				$('#jqxSwitchButtonGPIO'+ i).jqxSwitchButton({checked: false });
-				AfeGPIO_dir[i] = 1;
+				$("#jqxSwitchButtonSignalType").jqxSwitchButton({checked: false });
+			}
+			else
+			{
+				$("#jqxSwitchButtonSignalType").jqxSwitchButton({checked: true });
+			}
+			
+			pcm.ReadVariable("riop_status_buffer.siggen_status.frequency", vValue0, tValue0, retMsg);
+			siggen_freq = pcm.LastVariable_vValue; 
+			$('#jqxSliderSetSpeedM1').jqxSlider('setValue', siggen_freq);
+			
+			document.getElementById("SiggenFreq").innerHTML = "Frequency: " + siggen_freq + " Hz";
+			
+			
+			//MCU DIG OUTPUT
+			pcm.ReadVariable("riop_status_buffer.mcu_digital_output_pins_status", vValue0, tValue0, retMsg)
+			let status_outputs = pcm.LastVariable_vValue;  
+			
+			for(let i = 0; i < 8; i++)
+			{
+				let status = (status_outputs & (0x1<<i));
 				
-			}
-			else
-			{
-				$('#jqxSwitchButtonGPIO'+ i).jqxSwitchButton({checked: true });
-				AfeGPIO_dir[i] = 0;
+				let text = ('#jqxSwitchButtonPlcOut'+i);
+			
+				if((status != 0))
+				{
+					$('#jqxSwitchButtonPlcOut'+i).jqxSwitchButton({checked: true });
+				}
+				else
+				{
+					$('#jqxSwitchButtonPlcOut'+i).jqxSwitchButton({checked: false });
+				}
 			}
 			
+			
+			// AFE GPIOs
+			pcm.ReadVariable("riop_status_buffer.afe_status.afe_gpio_pins_direction_status", vValue0, tValue0, retMsg)
+			let gpio_dir = pcm.LastVariable_vValue;
+			
+			pcm.ReadVariable("riop_status_buffer.afe_status.afe_gpio_output_pins_status", vValue0, tValue0, retMsg)
+			let gpio_out = pcm.LastVariable_vValue;
+			
+			for(let i = 2; i < 10; i++)
+			{	
+				let status_dir = (gpio_dir & (0x1<<i));
+				
+				if(status_dir != 0)		
+				{
+					$('#jqxSwitchButtonGPIO'+ i).jqxSwitchButton({checked: false });
+					AfeGPIO_dir[i] = 1;
+					
+				}
+				else
+				{
+					$('#jqxSwitchButtonGPIO'+ i).jqxSwitchButton({checked: true });
+					AfeGPIO_dir[i] = 0;
+				}
+				
 
-			let status_out = (gpio_out & (0x1<<i));
-			
-			if(status_out != 0) 
-			{
-				$('#jqxSwitchButtonGPIO'+ i + "Val").jqxSwitchButton({checked: true });
-				AfeGPIO_out[i] = 1;
+				let status_out = (gpio_out & (0x1<<i));
+				
+				if(status_out != 0) 
+				{
+					$('#jqxSwitchButtonGPIO'+ i + "Val").jqxSwitchButton({checked: true });
+					AfeGPIO_out[i] = 1;
+				}
+				else
+				{
+					$('#jqxSwitchButtonGPIO'+ i + "Val").jqxSwitchButton({checked: false });
+					AfeGPIO_out[i] = 0;
+				}
 			}
-			else
-			{
-				$('#jqxSwitchButtonGPIO'+ i + "Val").jqxSwitchButton({checked: false });
-				AfeGPIO_out[i] = 0;
-			}
-		}
+		})
 	}
 	
 	

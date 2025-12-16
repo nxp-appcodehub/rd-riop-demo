@@ -1,0 +1,13 @@
+# ignore
+/Debug/*
+/Release/*
+.settings/
+
+# allow
+!/Debug/*.ld
+!/Debug/riop_M7FOLLOWER_DEMO.axf
+!/Release/*.ld
+!/Release/riop_M7FOLLOWER_DEMO.axf
+
+cscope.out
+tags

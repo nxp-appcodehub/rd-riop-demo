@@ -149,6 +149,7 @@ void BOARD_Init_NETC_ENETC0_ETH4_RGMII_Pins(void); /* Function assigned for the 
 
 /* Symbols to be used with GPIO driver */
 #define NETC_ETH4_RESET_GPIO                                              RGPIO3   /*!< GPIO peripheral base pointer */
+#define NETC_ETH4_RESET_INIT_GPIO_VALUE                                       1U   /*!< GPIO output initial state */
 #define NETC_ETH4_RESET_GPIO_PIN                                             13U   /*!< GPIO pin number */
 #define NETC_ETH4_RESET_GPIO_PIN_MASK                                (1U << 13U)   /*!< GPIO pin mask */
 
@@ -319,6 +320,7 @@ void BOARD_Init_NETC_SWT_ETH2_RGMII_Pins(void); /* Function assigned for the Cor
 
 /* Symbols to be used with GPIO driver */
 #define NETC_ETH2_ETH3_RESET_GPIO                                         RGPIO5   /*!< GPIO peripheral base pointer */
+#define NETC_ETH2_ETH3_RESET_INIT_GPIO_VALUE                                  0U   /*!< GPIO output initial state */
 #define NETC_ETH2_ETH3_RESET_GPIO_PIN                                         6U   /*!< GPIO pin number */
 #define NETC_ETH2_ETH3_RESET_GPIO_PIN_MASK                            (1U << 6U)   /*!< GPIO pin mask */
 
@@ -521,6 +523,7 @@ void BOARD_Init_ECAT_PT1_MII_Pins(void);      /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define ECAT_PT0_PT1_RESET_GPIO                                           RGPIO5   /*!< GPIO peripheral base pointer */
+#define ECAT_PT0_PT1_RESET_INIT_GPIO_VALUE                                    0U   /*!< GPIO output initial state */
 #define ECAT_PT0_PT1_RESET_GPIO_PIN                                           6U   /*!< GPIO pin number */
 #define ECAT_PT0_PT1_RESET_GPIO_PIN_MASK                              (1U << 6U)   /*!< GPIO pin mask */
 
@@ -614,6 +617,7 @@ void BOARD_Init_FlexSPI2_HYPERRAM_Pins(void); /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define CAN1_STBY_GPIO                                                    RGPIO1   /*!< GPIO peripheral base pointer */
+#define CAN1_STBY_INIT_GPIO_VALUE                                             0U   /*!< GPIO output initial state */
 #define CAN1_STBY_GPIO_PIN                                                   18U   /*!< GPIO pin number */
 #define CAN1_STBY_GPIO_PIN_MASK                                      (1U << 18U)   /*!< GPIO pin mask */
 
@@ -631,6 +635,7 @@ void BOARD_Init_CAN1_Pins(void);              /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define LED_GREEN_GPIO                                                    RGPIO1   /*!< GPIO peripheral base pointer */
+#define LED_GREEN_INIT_GPIO_VALUE                                             0U   /*!< GPIO output initial state */
 #define LED_GREEN_GPIO_PIN                                                   15U   /*!< GPIO pin number */
 #define LED_GREEN_GPIO_PIN_MASK                                      (1U << 15U)   /*!< GPIO pin mask */
 
@@ -642,6 +647,7 @@ void BOARD_Init_CAN1_Pins(void);              /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define LED_RED_GPIO                                                      RGPIO1   /*!< GPIO peripheral base pointer */
+#define LED_RED_INIT_GPIO_VALUE                                               0U   /*!< GPIO output initial state */
 #define LED_RED_GPIO_PIN                                                      3U   /*!< GPIO pin number */
 #define LED_RED_GPIO_PIN_MASK                                         (1U << 3U)   /*!< GPIO pin mask */
 
@@ -664,6 +670,7 @@ void BOARD_Init_CAN1_Pins(void);              /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define LED_BLUE_GPIO                                                     RGPIO1   /*!< GPIO peripheral base pointer */
+#define LED_BLUE_INIT_GPIO_VALUE                                              0U   /*!< GPIO output initial state */
 #define LED_BLUE_GPIO_PIN                                                    10U   /*!< GPIO pin number */
 #define LED_BLUE_GPIO_PIN_MASK                                       (1U << 10U)   /*!< GPIO pin mask */
 
@@ -764,6 +771,7 @@ void BOARD_Init_Digital_Input_Pins(void);     /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define DIGITAL_OUTPUT_01_GPIO                                            RGPIO2   /*!< GPIO peripheral base pointer */
+#define DIGITAL_OUTPUT_01_INIT_GPIO_VALUE                                     0U   /*!< GPIO output initial state */
 #define DIGITAL_OUTPUT_01_GPIO_PIN                                           21U   /*!< GPIO pin number */
 #define DIGITAL_OUTPUT_01_GPIO_PIN_MASK                              (1U << 21U)   /*!< GPIO pin mask */
 
@@ -775,6 +783,7 @@ void BOARD_Init_Digital_Input_Pins(void);     /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define DIGITAL_OUTPUT_02_GPIO                                            RGPIO2   /*!< GPIO peripheral base pointer */
+#define DIGITAL_OUTPUT_02_INIT_GPIO_VALUE                                     0U   /*!< GPIO output initial state */
 #define DIGITAL_OUTPUT_02_GPIO_PIN                                           22U   /*!< GPIO pin number */
 #define DIGITAL_OUTPUT_02_GPIO_PIN_MASK                              (1U << 22U)   /*!< GPIO pin mask */
 
@@ -786,6 +795,7 @@ void BOARD_Init_Digital_Input_Pins(void);     /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define DIGITAL_OUTPUT_03_GPIO                                            RGPIO2   /*!< GPIO peripheral base pointer */
+#define DIGITAL_OUTPUT_03_INIT_GPIO_VALUE                                     0U   /*!< GPIO output initial state */
 #define DIGITAL_OUTPUT_03_GPIO_PIN                                           23U   /*!< GPIO pin number */
 #define DIGITAL_OUTPUT_03_GPIO_PIN_MASK                              (1U << 23U)   /*!< GPIO pin mask */
 
@@ -797,6 +807,7 @@ void BOARD_Init_Digital_Input_Pins(void);     /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define DIGITAL_OUTPUT_04_GPIO                                            RGPIO2   /*!< GPIO peripheral base pointer */
+#define DIGITAL_OUTPUT_04_INIT_GPIO_VALUE                                     0U   /*!< GPIO output initial state */
 #define DIGITAL_OUTPUT_04_GPIO_PIN                                           24U   /*!< GPIO pin number */
 #define DIGITAL_OUTPUT_04_GPIO_PIN_MASK                              (1U << 24U)   /*!< GPIO pin mask */
 
@@ -808,6 +819,7 @@ void BOARD_Init_Digital_Input_Pins(void);     /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define DIGITAL_OUTPUT_05_GPIO                                            RGPIO2   /*!< GPIO peripheral base pointer */
+#define DIGITAL_OUTPUT_05_INIT_GPIO_VALUE                                     0U   /*!< GPIO output initial state */
 #define DIGITAL_OUTPUT_05_GPIO_PIN                                           25U   /*!< GPIO pin number */
 #define DIGITAL_OUTPUT_05_GPIO_PIN_MASK                              (1U << 25U)   /*!< GPIO pin mask */
 
@@ -819,6 +831,7 @@ void BOARD_Init_Digital_Input_Pins(void);     /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define DIGITAL_OUTPUT_06_GPIO                                            RGPIO2   /*!< GPIO peripheral base pointer */
+#define DIGITAL_OUTPUT_06_INIT_GPIO_VALUE                                     0U   /*!< GPIO output initial state */
 #define DIGITAL_OUTPUT_06_GPIO_PIN                                           26U   /*!< GPIO pin number */
 #define DIGITAL_OUTPUT_06_GPIO_PIN_MASK                              (1U << 26U)   /*!< GPIO pin mask */
 
@@ -830,6 +843,7 @@ void BOARD_Init_Digital_Input_Pins(void);     /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define DIGITAL_OUTPUT_07_GPIO                                            RGPIO2   /*!< GPIO peripheral base pointer */
+#define DIGITAL_OUTPUT_07_INIT_GPIO_VALUE                                     0U   /*!< GPIO output initial state */
 #define DIGITAL_OUTPUT_07_GPIO_PIN                                           27U   /*!< GPIO pin number */
 #define DIGITAL_OUTPUT_07_GPIO_PIN_MASK                              (1U << 27U)   /*!< GPIO pin mask */
 
@@ -841,6 +855,7 @@ void BOARD_Init_Digital_Input_Pins(void);     /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define DIGITAL_OUTPUT_08_GPIO                                            RGPIO2   /*!< GPIO peripheral base pointer */
+#define DIGITAL_OUTPUT_08_INIT_GPIO_VALUE                                     0U   /*!< GPIO output initial state */
 #define DIGITAL_OUTPUT_08_GPIO_PIN                                           28U   /*!< GPIO pin number */
 #define DIGITAL_OUTPUT_08_GPIO_PIN_MASK                              (1U << 28U)   /*!< GPIO pin mask */
 
@@ -858,6 +873,7 @@ void BOARD_Init_Digital_Output_Pins(void);    /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define AFE_CS_GPIO                                                       RGPIO1   /*!< GPIO peripheral base pointer */
+#define AFE_CS_INIT_GPIO_VALUE                                                1U   /*!< GPIO output initial state */
 #define AFE_CS_GPIO_PIN                                                       5U   /*!< GPIO pin number */
 #define AFE_CS_GPIO_PIN_MASK                                          (1U << 5U)   /*!< GPIO pin mask */
 
@@ -895,6 +911,7 @@ void BOARD_Init_Digital_Output_Pins(void);    /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define AFE_RST_GPIO                                                      RGPIO5   /*!< GPIO peripheral base pointer */
+#define AFE_RST_INIT_GPIO_VALUE                                               0U   /*!< GPIO output initial state */
 #define AFE_RST_GPIO_PIN                                                      8U   /*!< GPIO pin number */
 #define AFE_RST_GPIO_PIN_MASK                                         (1U << 8U)   /*!< GPIO pin mask */
 
@@ -906,6 +923,7 @@ void BOARD_Init_Digital_Output_Pins(void);    /* Function assigned for the Corte
 
 /* Symbols to be used with GPIO driver */
 #define AFE_SYNC_GPIO                                                     RGPIO5   /*!< GPIO peripheral base pointer */
+#define AFE_SYNC_INIT_GPIO_VALUE                                              0U   /*!< GPIO output initial state */
 #define AFE_SYNC_GPIO_PIN                                                     7U   /*!< GPIO pin number */
 #define AFE_SYNC_GPIO_PIN_MASK                                        (1U << 7U)   /*!< GPIO pin mask */
 

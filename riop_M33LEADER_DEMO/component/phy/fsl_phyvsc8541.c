@@ -35,15 +35,15 @@
 
 /*! @brief Defines the PHY resource interface. */
 #define PHY_VSC8541_WRITE(handle, regAddr, data) \
-    ((phy_vsc8541_resource_t *)handle->resource)->write(handle->phyAddr, regAddr, data)
+    ((phy_vsc8541_resource_t *)(handle)->resource)->write((handle)->phyAddr, regAddr, data)
 #define PHY_VSC8541_READ(handle, regAddr, pData) \
-    ((phy_vsc8541_resource_t *)handle->resource)->read(handle->phyAddr, regAddr, pData)
+    ((phy_vsc8541_resource_t *)(handle)->resource)->read((handle)->phyAddr, regAddr, pData)
 
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
 
-#if defined(MMD) && MMD     
+#if 0
 static status_t PHY_VSC8541_MMD_SetDevice(phy_handle_t *handle,
                                           uint8_t device,
                                           uint16_t addr,
@@ -113,11 +113,6 @@ status_t PHY_VSC8541_Init(phy_handle_t *handle, const phy_config_t *config)
         return result;
     }
 
-#ifdef MII_MODE
-    PHY_VSC8541_MII_Init(handle);
-#elif RMII_MODE
-    PHY_VSC8541_RMII_Init(handle);   
-#endif
     if (config->autoNeg)
     {
         /* Set the auto-negotiation. */
@@ -157,7 +152,6 @@ status_t PHY_VSC8541_Init(phy_handle_t *handle, const phy_config_t *config)
         /* Disable the auto-negotiation and set user-defined speed/duplex configuration. */
         result = PHY_VSC8541_SetLinkSpeedDuplex(handle, config->speed, config->duplex);
     }
-    
     return result;
 }
 
@@ -169,46 +163,6 @@ status_t PHY_VSC8541_Write(phy_handle_t *handle, uint8_t phyReg, uint16_t data)
 status_t PHY_VSC8541_Read(phy_handle_t *handle, uint8_t phyReg, uint16_t *pData)
 {
     return PHY_VSC8541_READ(handle, phyReg, pData);
-}
-
-status_t PHY_VSC8541_MII_Init(phy_handle_t *handle)
-{
-    status_t result;
-    uint16_t regValue = 0U;
-    PHY_VSC8541_READ(handle, 0x17, &regValue);
-    if(0x0000 != regValue)
-    {
-        PHY_VSC8541_WRITE(handle, 0x17, 0x0000);
-    }
-    /* Reset PHY. */
-    result = PHY_VSC8541_WRITE(handle, PHY_BASICCONTROL_REG, PHY_BCTL_RESET_MASK);
-    if (result != kStatus_Success)
-    {
-        return result;
-    }
-    PHY_VSC8541_READ(handle, 0x17, &regValue);
-    
-    return result;
-}
-
-status_t PHY_VSC8541_RMII_Init(phy_handle_t *handle)
-{
-    status_t result;
-    uint16_t regValue = 0U;
-    PHY_VSC8541_READ(handle, 0x17, &regValue);
-    if(0x0800 != regValue)
-    {
-        PHY_VSC8541_WRITE(handle, 0x17, 0x2800);
-    }
-    /* Reset PHY. */
-    result = PHY_VSC8541_WRITE(handle, PHY_BASICCONTROL_REG, PHY_BCTL_RESET_MASK);
-    if (result != kStatus_Success)
-    {
-        return result;
-    }
-    PHY_VSC8541_READ(handle, 0x17, &regValue);
-    
-    return result;
 }
 
 status_t PHY_VSC8541_GetAutoNegotiationStatus(phy_handle_t *handle, bool *status)
@@ -378,7 +332,7 @@ status_t PHY_VSC8541_EnableLoopback(phy_handle_t *handle, phy_loop_t mode, phy_s
     return result;
 }
 
-#if defined(MMD) && MMD
+#if 0
 static status_t PHY_VSC8541_MMD_SetDevice(phy_handle_t *handle,
                                           uint8_t device,
                                           uint16_t addr,
@@ -405,7 +359,6 @@ static status_t PHY_VSC8541_MMD_SetDevice(phy_handle_t *handle,
     return result;
 }
 
-
 static inline status_t PHY_VSC8541_MMD_ReadData(phy_handle_t *handle, uint16_t *pData)
 {
     return PHY_VSC8541_READ(handle, PHY_MMD_ACCESS_DATA_REG, pData);
@@ -415,7 +368,6 @@ static inline status_t PHY_VSC8541_MMD_WriteData(phy_handle_t *handle, uint16_t 
 {
     return PHY_VSC8541_WRITE(handle, PHY_MMD_ACCESS_DATA_REG, data);
 }
-
 
 static status_t PHY_VSC8541_MMD_Read(phy_handle_t *handle, uint8_t device, uint16_t addr, uint16_t *pData)
 {

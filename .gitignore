@@ -1,2 +1,6 @@
 /.metadata/
-plcio_M33LEADER_DEMO/.settings/language.settings.xml
+riop_M33LEADER_DEMO/.settings/language.settings.xml
+cscope.out
+tags
+*.swp
+*~

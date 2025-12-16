@@ -1,8 +1,0 @@
-# ignore
-.settings/
-/Debug/*
-/Release/*
-
-# allow
-!/Debug/*.ld
-!/Release/*.ld

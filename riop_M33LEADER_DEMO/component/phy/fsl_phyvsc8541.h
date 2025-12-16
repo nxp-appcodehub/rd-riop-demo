@@ -31,21 +31,9 @@
 /*******************************************************************************
  * Definitions
  ******************************************************************************/
-   
-#define RGMII_MODE 1
-//#define RMII_MODE 1
-//#define MII_MODE 1
-//#ifdef RGMII_MODE
-//#define DUAL_SPEED 1
-//#endif   
 
 /*! @brief PHY driver version */
 #define FSL_PHY_DRIVER_VERSION (MAKE_VERSION(2, 0, 0))
-
-#if !defined MMD 
-#define MMD           0
-#endif
-
 
 /*! @brief PHY operations structure. */
 extern const phy_operations_t phyvsc8541_ops;
@@ -170,7 +158,7 @@ status_t PHY_VSC8541_SetLinkSpeedDuplex(phy_handle_t *handle, phy_speed_t speed,
  */
 status_t PHY_VSC8541_EnableLoopback(phy_handle_t *handle, phy_loop_t mode, phy_speed_t speed, bool enable);
 
-/* @} */
+/*! @} */
 
 #if defined(__cplusplus)
 }

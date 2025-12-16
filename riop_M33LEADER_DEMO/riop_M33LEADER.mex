@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding= "UTF-8" ?>
-<configuration name="MIMXRT1189xxxxx" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_16 http://mcuxpresso.nxp.com/XSD/mex_configuration_16.xsd" uuid="8b4b5a29-0d08-47b1-826f-216c17a2c020" version="16" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_16" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<configuration name="MIMXRT1189xxxxx" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_18 http://mcuxpresso.nxp.com/XSD/mex_configuration_18.xsd" uuid="8b4b5a29-0d08-47b1-826f-216c17a2c020" version="18" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_18" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
    <common>
       <processor>MIMXRT1189xxxxx</processor>
       <package>MIMXRT1189CVM8B</package>
@@ -12,19 +12,19 @@
    </common>
    <preferences>
       <validate_boot_init_only>true</validate_boot_init_only>
-      <generate_extended_information>false</generate_extended_information>
       <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
       <update_include_paths>true</update_include_paths>
+      <enable_parallel_routing>true</enable_parallel_routing>
       <generate_registers_defines>false</generate_registers_defines>
    </preferences>
    <tools>
-      <pins name="Pins" version="16.0" enabled="true" update_project_code="true">
+      <pins name="Pins" version="17.0" enabled="true" update_project_code="true">
          <generated_project_files>
             <file path="board/pin_mux.c" update_enabled="true"/>
             <file path="board/pin_mux.h" update_enabled="true"/>
          </generated_project_files>
          <pins_profile>
-            <processor_version>16.3.0</processor_version>
+            <processor_version>25.06.10</processor_version>
             <pin_labels>
                <pin_label pin_num="B1" pin_signal="GPIO_AON_08" label="LPUART1_TX" identifier="LPUART1_TX"/>
                <pin_label pin_num="A5" pin_signal="GPIO_AON_09" label="LPUART1_RX" identifier="LPUART1_RX"/>
@@ -375,16 +375,15 @@
                      <pin_features>
                         <pin_feature name="identifier" value="NETC_ETH4_EMDIO"/>
                         <pin_feature name="software_input_on" value="Disable"/>
-                        <pin_feature name="pull_down_pull_up_config" value="Pull_Down"/>
+                        <pin_feature name="pull_down_pull_up_config" value="Pull_Up"/>
                         <pin_feature name="pdrv_config" value="High_Driver"/>
-                        <pin_feature name="open_drain" value="Disable"/>
+                        <pin_feature name="open_drain" value="Enable"/>
                      </pin_features>
                   </pin>
                   <pin peripheral="RGPIO3" signal="gpio_io, 13" pin_num="T5" pin_signal="GPIO_EMC_B2_03">
                      <pin_features>
-                        <pin_feature name="direction" value="INPUT"/>
-                        <pin_feature name="gpio_interrupt" value="kRGPIO_InterruptOrDMADisabled"/>
-                        <pin_feature name="gpio_interrupt_output" value="kRGPIO_InterruptOutput0"/>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                        <pin_feature name="gpio_init_state" value="true"/>
                         <pin_feature name="software_input_on" value="Disable"/>
                         <pin_feature name="pull_down_pull_up_config" value="Pull_Down"/>
                         <pin_feature name="pdrv_config" value="High_Driver"/>

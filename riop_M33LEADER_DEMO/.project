@@ -3,7 +3,7 @@
 	<name>riop_M33LEADER_DEMO</name>
 	<comment></comment>
 	<projects>
-		<project>riop_M7FOLLOWER</project>
+		<project>riop_M7FOLLOWER_DEMO</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

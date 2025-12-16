@@ -136,25 +136,33 @@
 								<option id="gnu.c.compiler.option.preprocessor.preprocess.1209312197" name="Preprocess only (-E)" superClass="gnu.c.compiler.option.preprocessor.preprocess" useByScannerDiscovery="false"/>
 								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.1598574154" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.2079037092" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr/mcmgr/inc/platform/imxrt1180}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities/debug_console_lite}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr/mcmgr/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/netc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/uart}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/lists}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/xip}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/silicon_id}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities/str}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS/m-profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/device/periph}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/phy}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/gpio}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/startup}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/xip}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/silicon_id}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/board}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg_lite/lib/include/environment/freertos}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg_lite/lib/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg_lite/lib/include/platform/imxrt1180}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/freertos/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/freertos/portable/GCC/ARM_CM33_NTZ/non_secure}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg-lite/lib/include/environment/freertos}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg-lite/lib/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg-lite/lib/include/platform/imxrt1180}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/freertos/freertos-kernel/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/source/rpmsg_task}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lwip/port}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lwip/src}&quot;"/>
@@ -225,6 +233,19 @@
 								<option id="com.crt.advproject.gas.arch.744409348" name="Architecture" superClass="com.crt.advproject.gas.arch" value="com.crt.advproject.gas.target.cm33" valueType="enumerated"/>
 								<option id="gnu.both.asm.option.flags.crt.1819680935" name="Assembler flags" superClass="gnu.both.asm.option.flags.crt" value="-c -x assembler-with-cpp -D__REDLIB__ -D__MULTICORE_MASTER -D__MULTICORE_MASTER_SLAVE_M7SLAVE" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.both.asm.option.include.paths.1318654494" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr/mcmgr/inc/platform/imxrt1180}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities/debug_console_lite}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr/mcmgr/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/uart}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/lists}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/xip}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/silicon_id}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities/str}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS/m-profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/source}&quot;"/>
 								</option>
 								<option id="gnu.both.asm.option.warnings.nowarn.236447379" name="Suppress warnings (-W)" superClass="gnu.both.asm.option.warnings.nowarn"/>
@@ -281,7 +302,7 @@
 								<option id="com.crt.advproject.link.cpp.multicore.master.1574857103" name="Multicore master" superClass="com.crt.advproject.link.cpp.multicore.master"/>
 								<option id="com.crt.advproject.link.cpp.multicore.empty.1650153483" name="No Multicore options for this project" superClass="com.crt.advproject.link.cpp.multicore.empty"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.crt.advproject.link.cpp.multicore.master.userobjs.1887788688" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.cpp.multicore.master.userobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="${workspace_loc:/riop_M7FOLLOWER/${ConfigName}/riop_M7FOLLOWER.axf.o}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/riop_M7FOLLOWER_DEMO/${ConfigName}/riop_M7FOLLOWER_DEMO.axf.o}"/>
 								</option>
 								<option id="com.crt.advproject.link.cpp.config.2075279775" name="Obsolete (Config)" superClass="com.crt.advproject.link.cpp.config"/>
 								<option id="com.crt.advproject.link.cpp.store.488126237" name="Obsolete (Store)" superClass="com.crt.advproject.link.cpp.store"/>
@@ -293,7 +314,7 @@
 							</tool>
 							<tool id="com.crt.advproject.link.exe.debug.751806709" name="MCU Linker" superClass="com.crt.advproject.link.exe.debug">
 								<option id="com.crt.advproject.link.gcc.multicore.slave.1419254682" name="Multicore configuration" superClass="com.crt.advproject.link.gcc.multicore.slave" value="Master" valueType="string"/>
-								<option id="com.crt.advproject.link.gcc.multicore.master.945615170" name="Multicore master" superClass="com.crt.advproject.link.gcc.multicore.master" value="M7SLAVE,${workspace_loc:/riop_M7FOLLOWER/Debug/riop_M7FOLLOWER.axf.o},M7_ITCM_ALIAS,,true;" valueType="string"/>
+								<option id="com.crt.advproject.link.gcc.multicore.master.945615170" name="Multicore master" superClass="com.crt.advproject.link.gcc.multicore.master" value="M7SLAVE,${workspace_loc:/riop_M7FOLLOWER_DEMO/Debug/riop_M7FOLLOWER_DEMO.axf.o},M7_ITCM_ALIAS,,true;" valueType="string"/>
 								<option id="com.crt.advproject.link.gcc.hdrlib.733563060" name="Library" superClass="com.crt.advproject.link.gcc.hdrlib" value="com.crt.advproject.gcc.link.hdrlib.codered.nohost_nf" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.fpu.1074347885" name="Floating point" superClass="com.crt.advproject.link.fpu" value="com.crt.advproject.link.fpu.fpv5sp.hard" valueType="enumerated"/>
 								<option id="com.crt.advproject.link.thumb.135592231" name="Thumb mode" superClass="com.crt.advproject.link.thumb" value="true" valueType="boolean"/>
@@ -309,7 +330,7 @@
 									<listOptionValue builtIn="false" value="isd=*(.noinit.$rpmsg_sh_mem);region=SHMEM_REGION;type=.noinit"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.crt.advproject.link.gcc.multicore.master.userobjs.818191506" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.gcc.multicore.master.userobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="${workspace_loc:/riop_M7FOLLOWER/Debug/riop_M7FOLLOWER.axf.o}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/riop_M7FOLLOWER_DEMO/Debug/riop_M7FOLLOWER_DEMO.axf.o}"/>
 								</option>
 								<option id="com.crt.advproject.link.arch.819351869" name="Architecture" superClass="com.crt.advproject.link.arch" value="com.crt.advproject.link.target.cm33" valueType="enumerated"/>
 								<option id="gnu.c.link.option.nostart.1100854731" name="Do not use standard start files (-nostartfiles)" superClass="gnu.c.link.option.nostart"/>
@@ -383,7 +404,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="freertos"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lwip"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="mcmgr"/>
-						<entry excluding="lib/rpmsg_lite/porting/environment/rpmsg_env_bm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="rpmsg_lite"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="rpmsg-lite"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="scripts"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="source"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
@@ -524,25 +545,33 @@
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.undef.symbol.1307086480" name="Undefined symbols (-U)" superClass="gnu.c.compiler.option.preprocessor.undef.symbol" useByScannerDiscovery="false"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.c.compiler.option.include.paths.1404814492" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr/mcmgr/inc/platform/imxrt1180}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities/debug_console_lite}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr/mcmgr/inc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers/netc}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/uart}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/lists}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/xip}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/silicon_id}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities/str}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS/m-profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/device}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/device/periph}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/phy}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/gpio}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/startup}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/xip}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/silicon_id}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/board}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg_lite/lib/include/environment/freertos}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg_lite/lib/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg_lite/lib/include/platform/imxrt1180}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/freertos/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/freertos/portable/GCC/ARM_CM33_NTZ/non_secure}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg-lite/lib/include/environment/freertos}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg-lite/lib/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/rpmsg-lite/lib/include/platform/imxrt1180}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/freertos/freertos-kernel/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/source/rpmsg_task}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lwip/port}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/lwip/src}&quot;"/>
@@ -612,6 +641,19 @@
 								<option id="com.crt.advproject.gas.arch.1690233744" name="Architecture" superClass="com.crt.advproject.gas.arch" value="com.crt.advproject.gas.target.cm33" valueType="enumerated"/>
 								<option id="gnu.both.asm.option.flags.crt.2016207769" name="Assembler flags" superClass="gnu.both.asm.option.flags.crt" value="-c -x assembler-with-cpp -D__REDLIB__ -D__MULTICORE_MASTER -D__MULTICORE_MASTER_SLAVE_M7SLAVE" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.both.asm.option.include.paths.1811654356" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr/mcmgr/inc/platform/imxrt1180}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities/debug_console_lite}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mcmgr/mcmgr/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/drivers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/uart}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/lists}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/xip}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component/silicon_id}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/utilities/str}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/CMSIS/m-profile}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/component}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/source}&quot;"/>
 								</option>
 								<option id="gnu.both.asm.option.warnings.nowarn.1688638366" name="Suppress warnings (-W)" superClass="gnu.both.asm.option.warnings.nowarn"/>
@@ -668,7 +710,7 @@
 								<option id="com.crt.advproject.link.cpp.multicore.master.1920853700" name="Multicore master" superClass="com.crt.advproject.link.cpp.multicore.master"/>
 								<option id="com.crt.advproject.link.cpp.multicore.empty.16606247" name="No Multicore options for this project" superClass="com.crt.advproject.link.cpp.multicore.empty"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.crt.advproject.link.cpp.multicore.master.userobjs.2013562913" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.cpp.multicore.master.userobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="${workspace_loc:/riop_M7FOLLOWER/${ConfigName}/riop_M7FOLLOWER.axf.o}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/riop_M7FOLLOWER_DEMO/${ConfigName}/riop_M7FOLLOWER_DEMO.axf.o}"/>
 								</option>
 								<option id="com.crt.advproject.link.cpp.config.543914150" name="Obsolete (Config)" superClass="com.crt.advproject.link.cpp.config"/>
 								<option id="com.crt.advproject.link.cpp.store.797621450" name="Obsolete (Store)" superClass="com.crt.advproject.link.cpp.store"/>
@@ -692,7 +734,7 @@
 									<listOptionValue builtIn="false" value="isd=*(.noinit.$rpmsg_sh_mem);region=SHMEM_REGION;type=.noinit"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.crt.advproject.link.gcc.multicore.master.userobjs.646886010" name="Slave Objects (not visible)" superClass="com.crt.advproject.link.gcc.multicore.master.userobjs" valueType="userObjs">
-									<listOptionValue builtIn="false" value="${workspace_loc:/riop_M7FOLLOWER/Release/riop_M7FOLLOWER.axf.o}"/>
+									<listOptionValue builtIn="false" value="${workspace_loc:/riop_M7FOLLOWER_DEMO/Release/riop_M7FOLLOWER_DEMO.axf.o}"/>
 								</option>
 								<option id="com.crt.advproject.link.gcc.multicore.slave.1112190448" name="Multicore configuration" superClass="com.crt.advproject.link.gcc.multicore.slave" value="Master" valueType="string"/>
 								<option id="com.crt.advproject.link.arch.275933887" name="Architecture" superClass="com.crt.advproject.link.arch" value="com.crt.advproject.link.target.cm33" valueType="enumerated"/>
@@ -736,7 +778,7 @@
 								<option id="com.crt.advproject.link.gcc.nanofloat.scanf.1167038070" name="Enable scanf float " superClass="com.crt.advproject.link.gcc.nanofloat.scanf"/>
 								<option id="com.crt.advproject.link.toram.2010396057" name="Link application to RAM" superClass="com.crt.advproject.link.toram"/>
 								<option id="com.crt.advproject.link.stackOffset.530916091" name="Stack offset" superClass="com.crt.advproject.link.stackOffset"/>
-								<option id="com.crt.advproject.link.gcc.multicore.master.345546951" name="Multicore master" superClass="com.crt.advproject.link.gcc.multicore.master" value="M7SLAVE,${workspace_loc:/riop_M7FOLLOWER/Release/riop_M7FOLLOWER.axf.o},M7_ITCM_ALIAS,,true;" valueType="string"/>
+								<option id="com.crt.advproject.link.gcc.multicore.master.345546951" name="Multicore master" superClass="com.crt.advproject.link.gcc.multicore.master" value="M7SLAVE,${workspace_loc:/riop_M7FOLLOWER_DEMO/Release/riop_M7FOLLOWER_DEMO.axf.o},M7_ITCM_ALIAS,,true;" valueType="string"/>
 								<option id="com.crt.advproject.link.gcc.multicore.empty.698655475" name="No Multicore options for this project" superClass="com.crt.advproject.link.gcc.multicore.empty"/>
 								<option id="com.crt.advproject.link.config.132844876" name="Obsolete (Config)" superClass="com.crt.advproject.link.config"/>
 								<option id="com.crt.advproject.link.store.158861483" name="Obsolete (Store)" superClass="com.crt.advproject.link.store"/>
@@ -769,7 +811,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="freertos"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="lwip"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="mcmgr"/>
-						<entry excluding="lib/rpmsg_lite/porting/environment/rpmsg_env_bm.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="rpmsg_lite"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="rpmsg-lite"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="scripts"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="source"/>
 						<entry flags="LOCAL|VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="startup"/>
@@ -803,45 +845,45 @@
 	<storageModule moduleId="com.nxp.mcuxpresso.core.datamodels">
 		<sdkName>SDK_2.x_MIMXRT1189xxxxx</sdkName>
 		<sdkExample>evkmimxrt1180_riop_M33LEADER_DEMO</sdkExample>
-		<sdkVersion>2.16.000</sdkVersion>
-		<sdkComponents>middleware.multicore.mcmgr.imxrt1180.MIMXRT1189;utility.debug_console_lite.MIMXRT1189;platform.utilities.assert_lite.MIMXRT1189;middleware.multicore.mcmgr.MIMXRT1189;platform.drivers.lpuart.MIMXRT1189;platform.drivers.clock.MIMXRT1189;utility.incbin.MIMXRT1189;platform.drivers.common.MIMXRT1189;platform.devices.MIMXRT1189_CMSIS.MIMXRT1189;platform.devices.MIMXRT1189_mcux_scripts.MIMXRT1189;component.lpuart_adapter.MIMXRT1189;component.lists.MIMXRT1189;platform.devices.MIMXRT1189_startup.MIMXRT1189;platform.drivers.iomuxc.MIMXRT1189;platform.drivers.misc.MIMXRT1189;platform.drivers.rgpio.MIMXRT1189;platform.drivers.xip_device.MIMXRT1189;platform.drivers.xip_board.evkmimxrt1180.MIMXRT1189;platform.drivers.pmu_1.MIMXRT1189;platform.drivers.dcdc_soc.MIMXRT1189;platform.drivers.cache_xcache.MIMXRT1189;component.silicon_id_rt1180.MIMXRT1189;component.silicon_id.MIMXRT1189;platform.utilities.misc_utilities.MIMXRT1189;platform.drivers.mu1.MIMXRT1189;utility.str.MIMXRT1189;platform.drivers.ele_base_api.MIMXRT1189;platform.drivers.s3mu.MIMXRT1189;CMSIS_Include_core_cm.MIMXRT1189;platform.devices.MIMXRT1189_system.MIMXRT1189;evkmimxrt1180_riop_M33LEADER_DEMO;</sdkComponents>
+		<sdkVersion>25.09.00</sdkVersion>
+		<sdkComponents>middleware.multicore.mcmgr.imxrt1180.MIMXRT1189;utility.debug_console_lite.MIMXRT1189;platform.utilities.assert_lite.MIMXRT1189;middleware.multicore.mcmgr.MIMXRT1189;platform.drivers.lpuart.MIMXRT1189;platform.drivers.clock.MIMXRT1189;utility.incbin.MIMXRT1189;platform.drivers.common.MIMXRT1189;platform.devices.MIMXRT1189_CMSIS.MIMXRT1189;platform.devices.MIMXRT1189_mcux_scripts.MIMXRT1189;component.lpuart_adapter.MIMXRT1189;component.lists.MIMXRT1189;platform.devices.MIMXRT1189_startup.MIMXRT1189;platform.drivers.iomuxc.MIMXRT1189;platform.drivers.misc.MIMXRT1189;platform.drivers.rgpio.MIMXRT1189;platform.drivers.xip_device.MIMXRT1189;platform.drivers.xip_board.evkmimxrt1180.MIMXRT1189;platform.drivers.pmu_1.MIMXRT1189;platform.drivers.dcdc_soc.MIMXRT1189;platform.drivers.cache_xcache.MIMXRT1189;component.silicon_id_rt1180.MIMXRT1189;component.silicon_id.MIMXRT1189;platform.utilities.misc_utilities.MIMXRT1189;platform.drivers.mu1.MIMXRT1189;utility.str.MIMXRT1189;platform.drivers.ele_base_api.MIMXRT1189;platform.drivers.s3mu.MIMXRT1189;CMSIS_Include_core_cm.MIMXRT1189;platform.devices.MIMXRT1189_system.MIMXRT1189;evkmimxrt1180_riop_M33LEADER_DEMO;component.silicon_id_imxrt1180.MIMXRT1189;</sdkComponents>
 		<boardId>evkmimxrt1180</boardId>
 		<package>MIMXRT1189CVM8B</package>
 		<core>cm33</core>
 		<coreId>cm33_MIMXRT1189xxxxx</coreId>
 	</storageModule>
 	<storageModule moduleId="com.crt.config">
-		<projectStorage>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&#13;
-&lt;TargetConfig&gt;&#13;
-&lt;Properties property_0="Master" property_3="NXP" property_4="MIMXRT1189xxxxx" property_count="5" version="100300"/&gt;&#13;
-&lt;infoList vendor="NXP"&gt;&#13;
-&lt;info chip="MIMXRT1189xxxxx" name="MIMXRT1189xxxxx"&gt;&#13;
-&lt;chip&gt;&#13;
-&lt;name&gt;MIMXRT1189xxxxx&lt;/name&gt;&#13;
-&lt;family&gt;MIMXRT1180&lt;/family&gt;&#13;
-&lt;vendor&gt;NXP&lt;/vendor&gt;&#13;
-&lt;memory can_program="true" id="Flash" is_ro="true" size="0" type="Flash"/&gt;&#13;
-&lt;memory id="RAM" size="1536" type="RAM"/&gt;&#13;
-&lt;memoryInstance derived_from="Flash" driver="MIMXRT1180_SFDP_FlexSPI1_A_QSPI.cfx" edited="true" id="BOARD_FLASH" location="0x28000000" size="0x1000000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" edited="true" id="SRAM_DTC_cm33" location="0x20000000" size="0x20000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" edited="true" id="SRAM_ITC_cm33" location="0xffe0000" size="0x20000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" edited="true" id="SRAM_OC1_1H" location="0x20484000" size="0x1c000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" edited="true" id="NCACHE_REGION" location="0x204a0000" size="0x20000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" edited="true" id="SHMEM_REGION" location="0x20500000" size="0x40000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" edited="true" id="M7_ITCM_ALIAS" location="0x203c0000" size="0x40000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" edited="true" id="BOARD_SDRAM" location="0x80000000" size="0x2000000"/&gt;&#13;
-&lt;memoryInstance derived_from="RAM" edited="true" id="BOARD_HYPERRAM" location="0x4000000" size="0x800000"/&gt;&#13;
-&lt;/chip&gt;&#13;
-&lt;processor&gt;&#13;
-&lt;name gcc_name="cortex-m33"&gt;Cortex-M33&lt;/name&gt;&#13;
-&lt;family&gt;Cortex-M&lt;/family&gt;&#13;
-&lt;/processor&gt;&#13;
-&lt;processor&gt;&#13;
-&lt;name gcc_name="cortex-m7"&gt;Cortex-M7&lt;/name&gt;&#13;
-&lt;family&gt;Cortex-M&lt;/family&gt;&#13;
-&lt;/processor&gt;&#13;
-&lt;/info&gt;&#13;
-&lt;/infoList&gt;&#13;
+		<projectStorage>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;TargetConfig&gt;
+&lt;Properties property_0="Master" property_3="NXP" property_4="MIMXRT1189xxxxx" property_count="5" version="100300"/&gt;
+&lt;infoList vendor="NXP"&gt;
+&lt;info chip="MIMXRT1189xxxxx" name="MIMXRT1189xxxxx"&gt;
+&lt;chip&gt;
+&lt;name&gt;MIMXRT1189xxxxx&lt;/name&gt;
+&lt;family&gt;MIMXRT1180&lt;/family&gt;
+&lt;vendor&gt;NXP&lt;/vendor&gt;
+&lt;memory can_program="true" id="Flash" is_ro="true" size="0" type="Flash"/&gt;
+&lt;memory id="RAM" size="1536" type="RAM"/&gt;
+&lt;memoryInstance derived_from="Flash" driver="MIMXRT1180_SFDP_FlexSPI1_A_QSPI.cfx" edited="true" id="BOARD_FLASH" location="0x28000000" size="0x1000000"/&gt;
+&lt;memoryInstance derived_from="RAM" edited="true" id="SRAM_DTC_cm33" location="0x20000000" size="0x20000"/&gt;
+&lt;memoryInstance derived_from="RAM" edited="true" id="SRAM_ITC_cm33" location="0xffe0000" size="0x20000"/&gt;
+&lt;memoryInstance derived_from="RAM" edited="true" id="SRAM_OC1_1H" location="0x20484000" size="0x1c000"/&gt;
+&lt;memoryInstance derived_from="RAM" edited="true" id="NCACHE_REGION" location="0x204a0000" size="0x20000"/&gt;
+&lt;memoryInstance derived_from="RAM" edited="true" id="SHMEM_REGION" location="0x20500000" size="0x40000"/&gt;
+&lt;memoryInstance derived_from="RAM" edited="true" id="M7_ITCM_ALIAS" location="0x203c0000" size="0x40000"/&gt;
+&lt;memoryInstance derived_from="RAM" edited="true" id="BOARD_SDRAM" location="0x80000000" size="0x2000000"/&gt;
+&lt;memoryInstance derived_from="RAM" edited="true" id="BOARD_HYPERRAM" location="0x4000000" size="0x800000"/&gt;
+&lt;/chip&gt;
+&lt;processor&gt;
+&lt;name gcc_name="cortex-m33"&gt;Cortex-M33&lt;/name&gt;
+&lt;family&gt;Cortex-M&lt;/family&gt;
+&lt;/processor&gt;
+&lt;processor&gt;
+&lt;name gcc_name="cortex-m7"&gt;Cortex-M7&lt;/name&gt;
+&lt;family&gt;Cortex-M&lt;/family&gt;
+&lt;/processor&gt;
+&lt;/info&gt;
+&lt;/infoList&gt;
 &lt;/TargetConfig&gt;</projectStorage>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>

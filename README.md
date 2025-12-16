@@ -20,7 +20,7 @@ This application showcases the analog and digital I/O features supported by the 
 
 The application comes pre-programmed into the Remote IO Platform and is part of the Out-of-Box Experience.
 
-This README contains simplified information. When using the Remote IO Platform for the first time after receiving the package, it is enough to follow the <a href="">Quickstart Guide</a>. For a comprehensive document with complete instructions, please refer to the <a href="">User Guide</a>.
+This README contains simplified information. When using the Remote IO Platform for the first time after receiving the package, it is enough to follow the <a href="https://www.nxp.com/RIOP">Getting Started Guide</a>. For a comprehensive document with complete instructions, please refer to the <a href="https://www.nxp.com/RIOP">User Guide</a>.
 
 #### Boards: Custom board
 #### Categories: Sensor, Industrial, RTOS, Analog Front End
@@ -35,29 +35,29 @@ This README contains simplified information. When using the Remote IO Platform f
 5. [Release Notes](#step5)
 
 ## 1. Software<a name="step1"></a>
-The application is supports MCUXpresso IDE 24.12 or newer and VS Code with the MCUXpresso for VS Code extension version 25.3.72 or newer.
+The application is supports MCUXpresso IDE 25.06 or newer and VS Code with the MCUXpresso for VS Code extension version 25.03 or newer.
 
 ### IDE Download:
 <ul>
-    <li><a href="https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE">MCUXpresso IDE 24.12+</a></li>
+    <li><a href="https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-integrated-development-environment-ide:MCUXpresso-IDE">MCUXpresso IDE 25.06+</a></li>
     <li><a href="https://code.visualstudio.com/">VS Code IDE</a></li>
-    <li><a href="https://marketplace.visualstudio.com/items?itemName=NXPSemiconductors.mcuxpresso">MCUXpresso for VS Code extension 25.3.72+</a></li>
+    <li><a href="https://marketplace.visualstudio.com/items?itemName=NXPSemiconductors.mcuxpresso">MCUXpresso for VS Code extension 25.03+</a></li>
 </ul>
 
-Additional SW tools are needed to build, flash and use the application. These are the SEC Tool version 10 or newer (newer versions are numbered in a new format, e.g. 25.03.01) and FreeMASTER 3.2 or newer.
+Additional SW tools are needed to build, flash and use the application. These are the SEC Tool version 25.09 or newer and FreeMASTER 3.2 or newer.
 
 ### Tools Download:
 <ul>
-    <li><a href="https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-secure-provisioning-tool:MCUXPRESSO-SECURE-PROVISIONING">Secure Provisioning Tool v10+</a></li>
+    <li><a href="https://www.nxp.com/design/design-center/software/development-software/mcuxpresso-software-and-tools-/mcuxpresso-secure-provisioning-tool:MCUXPRESSO-SECURE-PROVISIONING">Secure Provisioning Tool v25.09+</a></li>
     <li><a href="https://www.nxp.com/design/design-center/software/development-software/freemaster-run-time-debugging-tool:FREEMASTER">FreeMASTER 3.2+</a></li>
 </ul>
 
-MCUxpresso SDK MIMXRT1189xxxxx 2.16.000 is required to enable project importing to either one of the supported IDEs.
+MCUxpresso SDK MIMXRT1189xxxxx 25.09.00 is required to enable project importing to either one of the supported IDEs.
 
 ### SDK Download:
 <ul>
     <li><a href="https://mcuxpresso.nxp.com/en">SDK for MCUXpresso IDE</a></li>
-    <li>When using VS Code, download the MCUX 2.16.000 repository using Import Repository feature in the MCUXpresso for VS Code extension</li>
+    <li>When using VS Code, download the MCUX 25.09.00 repository using Import Repository feature in the MCUXpresso for VS Code extension</li>
 </ul>
 
 ## 2. Hardware<a name="step2"></a>
@@ -66,12 +66,13 @@ MCUxpresso SDK MIMXRT1189xxxxx 2.16.000 is required to enable project importing 
     <li>Assembled and tested evaluation board in an antistatic bag</li>
     <li>USB-micro cable</li>
     <li>24 V Power adapter</li>
+    <li>3 colored wires</li>
 </ul>
 
 ### The application requires additional hardware components:
 <b>Mandatory:</b>
 <ul>
-    <li>PC with Windows 10</li>
+    <li>PC with Windows 10 or newer</li>
     <li>Ethernet cable</li>
 </ul>
 
@@ -128,7 +129,8 @@ Questions regarding the content/correctness of this example can be entered as Is
 ## 5. Release Notes<a name="step5"></a>
 | Version | Description / Update                           | Date                        |
 |:-------:|------------------------------------------------|----------------------------:|
-| 1.0.0     | Initial release on Application Code Hub        | June 15<sup>th</sup> 2025 |
+| 1.0.0   | Initial release on Application Code Hub        | June 15<sup>th</sup> 2025   |
+| 1.5.0   | SDK 25.09.00 based release                     | Dec 18<sup>th</sup> 2025    |
 
 ## Licensing
 
@@ -139,15 +141,15 @@ LA_OPT_Online Code Hosting NXP_Software_License - v1.4 May 2025
 <ul>
     <li>NXP (Proprietary)</li>
     <li>[NXP SDK (BSD-3-Clause)](BSD 3-Clause.txt)</li>
-    <li>FreeRTOS-Kernel 11.0.1 - Amazon (MIT) - https://github.com/FreeRTOS/FreeRTOS-Kernel?tab=MIT-1-ov-file#readme</li>
-    <li>LWIP lwIP-2.2.0 - Swedish Institute of Computer Science (BSD-3-Clause) - http://www.xfree86.org/3.3.6/COPYRIGHT2.html#5</li>
-    <li>CMSIS 5.9.0 - ARM (Apache-2.0) - https://github.com/ARM-software/CMSIS_5/releases/tag/5.9.0</li>
+    <li>FreeRTOS-Kernel 11.1.0 - Amazon (MIT) - riop_M33LEADER_DEMO/freertos/freertos-kernel/LICENSE.md</li>
+    <li>LWIP 2.2.1 - Swedish Institute of Computer Science  and community (BSD-3-Clause) - riop_M33LEADER_DEMO/lwip/COPYING</li>
+    <li>CMSIS 6.1.0 - ARM (Apache-2.0) - riop_M33LEADER_DEMO/CMSIS/LICENSE.txt</li>
     <li>rtos-abstraction-layer-1_2_0 - NXP (LA_OPT_Online Code Hosting)</li>
     <li>FreeMASTER 3.x - LA_OPT_NXP_Software_License v49 September 2023</li>
     <li>jQuery 3.7.1 - OpenJS Foundation (MIT) - https://jquery.com/license/</li>
     <li>jQWidgets 22.0.0 - Commercial license - http://www.jqwidgets.com/license/</li>
-    <li>RPMsg-Lite 5.1.0 - Mentor Graphics Corporation & community contributors (BSD-3-Clause) - https://github.com/NXPmicro/rpmsg-lite</li>
-    <li>MCMGR 4.1.4 - NXP (BSD-3-Clause)</li>
+    <li>RPMsg-Lite 5.2.1 - Mentor Graphics Corporation & community contributors (BSD-3-Clause) - https://github.com/NXPmicro/rpmsg-lite/LICENSE</li>
+    <li>MCMGR 5.0.1 - NXP (BSD-3-Clause)</li>
     <li>virtio - Bryan Venteicher (BSD-2-Clause)</li>
     <li>virtio_ring - Rusty Russell IBM Corporation 2007 (BSD-3-Clause)</li>
 </ul>

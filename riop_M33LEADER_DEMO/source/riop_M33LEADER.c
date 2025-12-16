@@ -66,7 +66,7 @@ void SystemInitHook(void)
 
 static volatile uint16_t RPMsgRemoteReadyEventData = 0U;
 
-static void RPMsgRemoteReadyEventHandler(uint16_t eventData, void *context)
+static void RPMsgRemoteReadyEventHandler(mcmgr_core_t coreNum, uint16_t eventData, void *context)
 {
     uint16_t *data = (uint16_t *)context;
 

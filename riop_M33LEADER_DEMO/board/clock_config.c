@@ -394,7 +394,6 @@ void BOARD_BootClockRUN(void)
 
     /* Init OSC RC 400M */
     CLOCK_OSC_EnableOscRc400M();
-    CLOCK_OSC_GateOscRc400M(false);
 
     /* Switch both core to OscRC400M first */
     rootCfg.mux = kCLOCK_M7_ClockRoot_MuxOscRc400M;
